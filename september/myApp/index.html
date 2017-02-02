@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<header>
+    <h1 style="font-size: 100px;color:white ; text-align: right;">Water Tracker</h1>
+</header>
+<body>
+<div id='main'>
+    <article id="article" style="background-color: #63C7B2; color:#263D42; display:none">
+        <button id ="aButton" class="color-change" onclick="showArticle()">Today's Stats</button>
+        <div id ="aContent"></div>
+    </article>
+    <nav id="nav" style="background-color: #80CED7; color: #263D42 ; ">
+        <form id="loginForm" onsubmit="return loginUser()">
+            <input id="login" type="text" placeholder="Username" required /><br>
+            <input id="password" type="password" placeholder="Password" required /><br>
+            <input id="nButton" type="submit"  value="Login" class="color-change" />
+            <input  id="signUpButton" type="submit" value="Sign Up" class="color-change" onclick="return newUser()" />
+        </form>
+        <table id="outside" class="color-change">
+            <tr><td id="t1">one</td></tr>
+            <tr><td id="t2">two</td></tr>
+        </table>
+        <div id ="nContent"></div>
+    </nav>
+    <aside id ="aside" style="background-color: #80CED7; color: #263D42; display: none">
+        <button id="asButton" class="color-change" onclick="logWater();showAside(); clearFields()">Add</button>
+        <label> <input id ="addWater" type="text" placeholder="Add new water entry"> </label>
+        <h1>WATER LOG:</h1>
+        <div id="asContent"></div>
+    </aside>
+</div>
+<footer id= "footer" style="display: none">
+
+        <label id="fLabel" ><input id="weight" type="text" placeholder ="Enter your weight(lbs)"></label>
+        <button id="fButton" class="color-change"  onclick="showFooter()">Submit</button>
+        <div style="color: #CCDBDC" id="fContent"></div>
+
+</footer>
+<script src="js/app.js"></script>
+</body>
+</html>

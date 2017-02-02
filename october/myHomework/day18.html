@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel=stylesheet" href="../../august/css/style.css">
+</head>
+<body>
+
+<h1>Homework Week 8 Day 16 : Udemy - JavaScript the Weird Parts</h1>
+
+<h2>Section 4 Lecture 35 - Function Statements and Function Expressions</h2>
+<ul>
+    <li>Expression: A unit of code that results in a value; It doesn't have to save to a variable</li>
+    <li>An anonymous function is a function that doesn't have a name in it's name property</li>
+    <li>An anonymous function cannot be hoisted since the function is being passed into a variable</li>
+    <li>When passing a function to a function, to invoke the function you simply add parenthesis</li>
+</ul>
+<h2>Coding Along:</h2>
+<pre class="prettyprint html-js">
+    greet();
+
+function greet() {
+    console.log('hi');
+}
+
+var anonymousGreet = function() {
+    console.log('hi');
+}
+
+anonymousGreet();
+
+function log(a) {
+   a();
+}
+
+log(function() {
+    console.log('hi');
+});
+
+</pre>
+
+<h2>Section 4 Lecture 36 - Conceptual Aside: By Value vs By Reference</h2>
+<ul>
+    <li>By value, passing or referencing, or setting equal one value to another, by copying the value</li>
+    <li>By reference, behaves differently from by value, all objects interact by reference, when sending them equal to each other</li>
+    <li>Parameters, objects are passed by reference, primitives by value but objects by reference</li>
+    <li>In javascript you don't have the option to use code to choose if something is passed by value or reference with your code syntax </li>
+</ul>
+<h2>Coding Along:</h2>
+<pre class="prettyprint html-js">
+    // by value (primitives)
+var a = 3;
+var b;
+
+b = a;
+a = 2;
+
+console.log(a);
+console.log(b);
+
+// by reference (all objects (including functions))
+var c = { greeting: 'hi' };
+var d;
+
+d = c;
+c.greeting = 'hello'; // mutate
+
+console.log(c);
+console.log(d);
+
+// by reference (even as parameters)
+function changeGreeting(obj) {
+    obj.greeting = 'Hola'; // mutate
+}
+
+changeGreeting(d);
+console.log(c);
+console.log(d);
+
+// equals operator sets up new memory space (new address)
+c = { greeting: 'howdy' };
+console.log(c);
+console.log(d);
+</pre>
+
+<h2>Section 4 Lecture 37 - Objects, Functions, and 'this'</h2>
+<ul>
+    <li>In javascript engine every time and execution context is created it gives us this variable called 'this'</li>
+    <li>If a value of an object is a function, it is called a method</li>
+    <li>You can reference the method by calling the var along with the dot operator</li>
+    <li>When you use 'this' within an object, it will reference the object that contains 'this'</li>
+</ul>
+<h2>Coding Along:</h2>
+<pre class="prettyprint html-js">
+    function a() {
+    console.log(this);
+    this.newvariable = 'hello';
+}
+
+var b = function() {
+    console.log(this);
+}
+
+a();
+
+console.log(newvariable); // not good!
+
+b();
+
+var c = {
+    name: 'The c object',
+    log: function() {
+        var self = this;
+
+        self.name = 'Updated c object';
+        console.log(self);
+
+        var setname = function(newname) {
+            self.name = newname;
+        }
+        setname('Updated again! The c object');
+        console.log(self);
+    }
+}
+
+c.log();
+</pre>
+
+<h2>Section 4 Lecture 38 - Conceptual Aside: Arrays - Collections of Anything</h2>
+<ul>
+    <li>An array is a collection that holds many things inside of it</li>
+    <li>Arrays can store numbers, booleans, objects, function expression, and strings</li>
+    <li>The function in an array is created on the fly so it becomes an expression rather than function statement</li>
+    <li>You can reference the elements in the array using a 0-based system, so first element is zero , second element being 1 and so on...</li>
+</ul>
+<h2>Coding Along:</h2>
+<pre class="prettyprint html-js">
+    var arr = [
+    1,
+    false,
+    {
+        name: 'Tony',
+        address: '111 Main St.'
+    },
+    function(name) {
+        var greeting = 'Hello ';
+        console.log(greeting + name);
+    },
+    "hello"
+];
+
+console.log(arr);
+arr[3](arr[2].name);
+</pre>
+
+<h2>Section 4 Lecture 39 - 'arguments' and spread</h2>
+<ul>
+    <li>Arguments: The parameters you pass to a function; Javascript gives you a keyword of the same name which contains them all.</li>
+    <li>You can skip the passing of parameters or pass on part of the parameters in javascript</li>
+    <li>Special keyword, argument, contains a list of parameters that you have passed</li>
+    <li>Spread parameter, parameters that are passing to a function, you can add a parameter with a ...'name', it will wrap up other parameters</li>
+</ul>
+<h2>Coding Along:</h2>
+<pre class="prettyprint html-js">
+    function greet(firstname, lastname, language) {
+
+    language = language || 'en';
+
+    if (arguments.length === 0) {
+        console.log('Missing parameters!');
+        console.log('-------------');
+        return;
+    }
+
+    console.log(firstname);
+    console.log(lastname);
+    console.log(language);
+    console.log(arguments);
+    console.log('arg 0: ' + arguments[0]);
+    console.log('-------------');
+
+}
+
+greet();
+greet('John');
+greet('John', 'Doe');
+greet('John', 'Doe', 'es');
+</pre>
+</body>
+</html>
+

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel=stylesheet" href="/css/style.css">
+</head>
+<body>
+<div>
+    <header>
+        <h1>FreeCodeCamp.com Homework for Week7 Day 13</h1>
+    </header>
+    <article>
+        <h2>Chaining If Else Statements</h2>
+        <p>if/else statements can be chained together for complex logic. Here is pseudocode of multiple chained if / else if statements:</p>
+        <code>if (condition1) {
+            statement1
+            } else if (condition2) {
+            statement2
+            } else if (condition3) {
+            statement3
+            . . .
+            } else {
+            statementN
+            }</code>
+
+        <h3>Instructions</h3>
+        <p>Write chained if/else if statements to fulfill the following conditions:
+
+            num < 5 - return "Tiny"
+            num < 10 - return "Small"
+            num < 15 - return "Medium"
+            num < 20 - return "Large"
+            num >= 20 - return "Huge"</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+
+function testSize(num) {
+  // Only change code below this line
+  if (num<5){return "Tiny";}
+  else if(num<10){return "Small";}
+  else if(num<15){return "Medium";}
+  else if (num<20){return "Large";}
+  else if (num>=20){return "Huge";}
+
+  // Only change code above this line
+}
+
+// Change this value to test
+testSize(7);
+            </pre>
+    </article>
+    <article>
+        <h2>Golf Code</h2>
+        <p>In the game of golf each hole has a par meaning the average number of strokes a golfer is expected to make in order to sink the ball in a hole to complete the play. Depending on how far above or below par your strokes are, there is a different nickname.</p>
+        <p>Your function will be passed par and strokes arguments. Return the correct string according to this table which lists the strokes in order of priority; top (highest) to bottom (lowest):</p>
+        <p>Strokes	Return
+            1	"Hole-in-one!"
+            <= par - 2	"Eagle"
+            par - 1	"Birdie"
+            par	"Par"
+            par + 1	"Bogey"
+            par + 2	"Double Bogey"
+            >= par + 3	"Go Home!"
+            par and strokes will always be numeric and positive.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+function golfScore(par, strokes) {
+  // Only change code below this line
+  if(strokes == 1){return "Hole-in-one!";}
+  else if(strokes <= par - 2){return "Eagle";}
+   else if(strokes == par - 1){return "Birdie";}
+   else if(strokes == par ){return "Par";}
+   else if(strokes == par + 1){return "Bogey";}
+   else if(strokes == par + 2){return "Double Bogey";}
+   else if(strokes >= par + 3){return "Go Home!";}
+  // Only change code above this line
+}
+
+// Change these values to test
+golfScore(5, 4);
+            </pre>
+    </article>
+    <article>
+        <h2>Selecting from many options with Switch Statements</h2>
+        <p>If you have many options to choose from, use a switch statement. A switch statement tests a value and can have many case statements which defines various possible values. Statements are executed from the first matched case value until a break is encountered.
+
+            Here is a pseudocode example:</p>
+        <code>switch (num) {
+            case value1:
+            statement1;
+            break;
+            case value2:
+            statement2;
+            break;
+            ...
+            case valueN:
+            statementN;
+            break;
+            }</code>
+        <p>case values are tested with strict equality (===). The break tells JavaScript to stop executing statements. If the break is omitted, the next statement will be executed.</p>
+        <h3>Instructions</h3>
+        <p>Write a switch statement which tests val and sets answer for the following conditions:
+            1 - "alpha"
+            2 - "beta"
+            3 - "gamma"
+            4 - "delta"
+
+            Here are some helpful links:
+
+            Switch Statement</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+function caseInSwitch(val) {
+  var answer = "";
+  // Only change code below this line
+  switch (val){
+    case 1:
+      answer = "alpha";
+      break;
+    case 2:
+      answer = "beta";
+      break;
+    case 3:
+      answer = "gamma";
+      break;
+    case 4:
+      answer = "delta";
+      break;
+  }
+
+
+  // Only change code above this line
+  return answer;
+}
+
+// Change this value to test
+caseInSwitch(1);
+            </pre>
+    </article>
+    <article>
+        <h2>Adding a default option in Switch statements </h2>
+        <p>In a switch statement you may not be able to specify all possible values as case statements. Instead, you can add the default statement which will be executed if no matching case statements are found. Think of it like the final else statement in an if/else chain.
+
+            A default statement should be the last case.</p>
+        <code>switch (num) {
+            case value1:
+            statement1;
+            break;
+            case value2:
+            statement2;
+            break;
+            ...
+            default:
+            defaultStatement;
+            }</code>
+        <h3>Instructions</h3>
+        <p>Write a switch statement to set answer for the following conditions:
+            "a" - "apple"
+            "b" - "bird"
+            "c" - "cat"
+            default - "stuff"</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+function switchOfStuff(val) {
+  var answer = "";
+  // Only change code below this line
+  switch (val){
+    case "a":
+      answer = "apple";
+      break;
+    case "b":
+      answer = "bird";
+      break;
+    case "c":
+      answer = "cat";
+      break;
+    default:
+      answer = "stuff";
+  }
+
+
+
+  // Only change code above this line
+  return answer;
+}
+
+// Change this value to test
+switchOfStuff(1);
+            </pre>
+    </article>
+    <article>
+        <h2>Multiple Identical Options in Switch Statements </h2>
+        <p>If the break statement is omitted from a switch statement's case, the following case statement(s) are executed until a break is encountered. If you have multiple inputs with the same output, you can represent them in a switch statement like this:</p>
+        <code>switch(val) {
+            case 1:
+            case 2:
+            case 3:
+            result = "1, 2, or 3";
+            break;
+            case 4:
+            result = "4 alone";
+            }</code>
+        <p>Cases for 1, 2, and 3 will all produce the same result.</p>
+        <h3>Instructions</h3>
+        <p>Write a switch statement to set answer for the following ranges:
+            1-3 - "Low"
+            4-6 - "Mid"
+            7-9 - "High"</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+
+function sequentialSizes(val) {
+  var answer = "";
+  // Only change code below this line
+  switch(val){
+    case 1:
+    case 2:
+    case 3:
+      answer = "Low";
+      break;
+    case 4:
+    case 5:
+    case 6:
+      answer = "Mid";
+      break;
+    case 7:
+    case 8:
+    case 9:
+      answer = "High";
+      break;
+  }
+
+
+  // Only change code above this line
+  return answer;
+}
+
+// Change this value to test
+sequentialSizes(1);
+            </pre>
+    </article>
+    <article>
+        <h2>Replacing If Else Chains with Switch</h2>
+        <p>If you have many options to choose from, a switch statement can be easier to write than many chained if/else if statements. The following:</p>
+        <code>if (val === 1) {
+            answer = "a";
+            } else if (val === 2) {
+            answer = "b";
+            } else {
+            answer = "c";
+            }</code>
+        <p>can be replaced with:</p>
+        <code>switch (val) {
+            case 1:
+            answer = "a";
+            break;
+            case 2:
+            answer = "b";
+            break;
+            default:
+            answer = "c";
+            }</code>
+        <h3>Instructions</h3>
+        <p>Change the chained if/else if statements into a switch statement.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+function chainToSwitch(val) {
+  var answer = "";
+  // Only change code below this line
+  switch (val){
+    case "bob":
+      answer = "Marley";
+      break;
+    case 42:
+      answer = "The Answer";
+      break;
+    case 1:
+      answer = "There is no #1";
+      break;
+    case 99:
+      answer = "Missed me by this much!";
+      break;
+    case 7:
+      answer = "Ate Nine";
+      break;
+  }
+
+  // Only change code above this line
+  return answer;
+}
+
+// Change this value to test
+chainToSwitch(7);
+            </pre>
+    </article>
+    <article>
+        <h2>Returning Boolean Values from Functions</h2>
+        <p>You may recall from Comparison with the Equality Operator that all comparison operators return a boolean true or false value.</p>
+        <p>A common anti-pattern is to use an if/else statement to do a comparison and then return true/false:</p>
+        <code>function isEqual(a,b) {
+            if (a === b) {
+            return true;
+            } else {
+            return false;
+            }
+            }</code>
+        <p>Since === returns true or false, we can return the result of the comparison:</p>
+        <code>function isEqual(a,b) {
+            return a === b;
+            }</code>
+        <h3>Instructions</h3>
+        <p>Fix the function isLess to remove the if/else statements.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+function isLess(a, b) {
+  // Fix this code
+  return a < b;
+}
+// Change these values to test
+isLess(10, 15);
+            </pre>
+    </article>
+    <article>
+        <h2>Return Early Pattern for Functions</h2>
+        <p>When a return statement is reached, the execution of the current function stops and control returns to the calling location.
+
+            Example</p>
+        <code>function myFun() {
+            console.log("Hello");
+            return "World";
+            console.log("byebye")
+            }
+            myFun();</code>
+        <p>The above outputs "Hello" to the console, returns "World", but "byebye" is never output, because the function exits at the return statement.</p>
+        <h3>Instructions</h3>
+        <p>Modify the function abTest so that if a or b are less than 0 the function will immediately exit with a value of undefined.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+// Setup
+function abTest(a, b) {
+  // Only change code below this line
+
+  if(a <0 || b < 0){
+    return undefined;
+  }
+
+  // Only change code above this line
+
+  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+
+// Change values below to test your code
+abTest(2,2);
+            </pre>
+    </article>
+    <article>
+        <h2>Counting Cards</h2>
+        <p>n the casino game Blackjack, a player can gain an advantage over the house by keeping track of the relative number of high and low cards remaining in the deck. This is called Card Counting.</p>
+        <p>Having more high cards remaining in the deck favors the player. Each card is assigned a value according to the table below. When the count is positive, the player should bet high. When the count is zero or negative, the player should bet low.</p>
+        <p>You will write a card counting function. It will receive a card parameter and increment or decrement the global count variable according to the card's value (see table). The function will then return a string with the current count and the string "Bet" if the count is positive, or "Hold" if the count is zero or negative. The current count and the player's decision ("Bet" or "Hold") should be separated by a single space.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+
+var count = 0;
+
+function cc(card) {
+  // Only change code below this line
+if(card >= 2 && card <7){
+  count++;
+  if (count > 0){
+      return count + " Bet";
+    }
+    else return count + " Hold";
+}
+  else if (card >= 7 && card < 10){
+    if (count > 0){
+      return count + " Bet";
+    }
+    else return count + " Hold";
+  }
+  else if ( card === 10 || card === 'J' || card === 'Q' || card === 'K' || card === 'A'){
+      count--;
+  if (count > 0){
+      return count + " Bet";
+    }
+    else return count + " Hold";
+  }
+  // Only change code above this line
+}
+
+// Add/remove calls to test your function.
+// Note: Only the last will display
+cc(7);
+
+            </pre>
+    </article>
+    <article>
+        <h2>Build JavaScript Objects</h2>
+        <p>You may have heard the term object before.
+
+            Objects are similar to arrays, except that instead of using indexes to access and modify their data, you access the data in objects through what are called properties.
+
+            Here's a sample object:</p>
+        <code>var cat = {
+            "name": "Whiskers",
+            "legs": 4,
+            "tails": 1,
+            "enemies": ["Water", "Dogs"]
+            };</code>
+        <p>Objects are useful for storing data in a structured way, and can represent real world objects, like a cat.
+
+        </p>
+        <h3>Instructions</h3>
+        <p>Make an object that represents a dog called myDog which contains the properties "name" (a string), "legs", "tails" and "friends".
+
+            You can set these object properties to whatever values you want, as long "name" is a string, "legs" and "tails" are numbers, and "friends" is an array.
+
+        </p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+
+// Example
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+
+// Only change code below this line.
+
+var myDog = {
+  "name": "Kombu",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything"]
+
+
+};
+            </pre>
+    </article>
+    <article>
+        <h2>Accessing Objects Properties with the Dot Operator </h2>
+        <p>There are two ways to access the properties of an object: the dot operator (.) and bracket notation ([]), similar to an array.</p>
+        <p>The dot operator is what you use when you know the name of the property you're trying to access ahead of time.</p>
+        <p>Here is a sample of using the dot operator (.) to read an object property:</p>
+        <code>var myObj = {
+            prop1: "val1",
+            prop2: "val2"
+            };
+            var prop1val = myObj.prop1; // val1
+            var prop2val = myObj.prop2; // val2</code>
+        <h3>Instructions</h3>
+        <p>Read in the property values of testObj using dot notation. Set the variable hatValue equal to the object property hat and set the variable shirtValue equal to the object property shirt.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+
+// Setup
+var testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+
+// Only change code below this line
+
+var hatValue = testObj.hat;      // Change this line
+var shirtValue = testObj.shirt;    // Change this line
+            </pre>
+    </article>
+    <article>
+        <h2>Accessing Objects Properties with Bracket Notation </h2>
+        <p>The second way to access the properties of an object is bracket notation ([]). If the property of the object you are trying to access has a space in it, you will need to use bracket notation.</p>
+        <p>Here is a sample of using bracket notation to read an object property:</p>
+        <code>var myObj = {
+            "Space Name": "Kirk",
+            "More Space": "Spock"
+            };
+            myObj["Space Name"]; // Kirk
+            myObj['More Space']; // Spock</code>
+        <p>Note that property names with spaces in them must be in quotes (single or double).</p>
+        <h3>Instructions</h3>
+        <p>Read the values of the properties "an entree" and "the drink" of testObj using bracket notation and assign them to entreeValue and drinkValue respectively.
+
+            Run tests (ctrl + enter)
+        </p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+// Setup
+var testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+
+// Only change code below this line
+
+var entreeValue = testObj["an entree"];   // Change this line
+var drinkValue = testObj["the drink"];    // Change this line
+            </pre>
+    </article>
+    <article>
+        <h2>Accessing Objects Properties with Variables</h2>
+        <p>Another use of bracket notation on objects is to use a variable to access a property. This can be very useful for iterating through lists of the object properties or for doing the lookup.
+
+            Here is an example of using a variable to access a property:</p>
+        <code>var someProp = "propName";
+            var myObj = {
+            propName: "Some Value"
+            }
+            myObj[someProp]; // "Some Value"</code>
+        <p>Here is one more:/p>
+        <code>var myDog = "Hunter";
+            var dogs = {
+            Fido: "Mutt",
+            Hunter: "Doberman",
+            Snoopie: "Beagle"
+            }
+            var breed = dogs[myDog];
+            console.log(breed);// "Doberman"</code>
+        <p>Note that we do not use quotes around the variable name when using it to access the property because we are using the value of the variable, not the name</p>
+        <h3>Instructions</h3>
+        <p>Use the playerNumber variable to lookup player 16 in testObj using bracket notation.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+// Setup
+var testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+
+// Only change code below this line;
+
+var playerNumber= 16;    // Change this Line
+var player = testObj[playerNumber];   // Change this Line
+
+            </pre>
+    </article>
+    <article>
+        <h2>Updating Object Properties </h2>
+        <p>After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.
+
+            For example, let's look at ourDog:</p>
+        <code>var ourDog = {
+            "name": "Camper",
+            "legs": 4,
+            "tails": 1,
+            "friends": ["everything!"]
+            };</code>
+        <p>ince he's a particularly happy dog, let's change his name to "Happy Camper". Here's how we update his object's name property:
+
+            ourDog.name = "Happy Camper"; or
+
+            ourDog["name"] = "Happy Camper";
+
+            Now when we evaluate ourDog.name, instead of getting "Camper", we'll get his new name, "Happy Camper".</p>
+        <h3>Instructions</h3>
+        <p>Update the myDog object's name property. Let's change her name from "Coder" to "Happy Coder". You can use either dot or bracket notation.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+// Example
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+
+ourDog.name = "Happy Camper";
+
+// Setup
+var myDog = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["Free Code Camp Campers"]
+};
+
+// Only change code below this line.
+
+myDog.name = "Happy Coder";
+
+            </pre>
+    </article>
+    <article>
+        <h2>Add New Properties to a JavaScript Object </h2>
+        <p>You can add new properties to existing JavaScript objects the same way you would modify them.
+
+            Here's how we would add a "bark" property to ourDog:
+
+            ourDog.bark = "bow-wow";
+
+            or
+
+            ourDog["bark"] = "bow-wow";
+
+            Now when we evaluate ourDog.bark, we'll get his bark, "bow-wow".</p>
+        <h3>Instructions</h3>
+        <p>Add a "bark" property to myDog and set it to a dog sound, such as "woof". You may use either dot or bracket notation.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+
+// Example
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+
+ourDog.bark = "bow-wow";
+
+// Setup
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["Free Code Camp Campers"]
+};
+
+// Only change code below this line.
+
+myDog.bark ="woof";
+
+            </pre>
+    </article>
+</div>
+</body>
+</html>

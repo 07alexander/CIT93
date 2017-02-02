@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel=stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <h1>FreeCodeCamp.com Homework for Week9 Day 17</h1>
+</header>
+<article>
+    <h2>Generate Random Whole Numbers with JavaScript</h2>
+    <p>It's great that we can generate random decimal numbers, but it's even more useful if we use it to generate random whole numbers.</p>
+    <p>Use Math.random() to generate a random decimal.
+        Multiply that random decimal by 20.
+        Use another function, Math.floor() to round the number down to its nearest whole number.</p>
+    <p>Remember that Math.random() can never quite return a 1 and, because we're rounding down, it's impossible to actually get 20. This technique will give us a whole number between 0 and 19.
+
+        Putting everything together, this is what our code looks like:</p>
+    <code>Math.floor(Math.random() * 20);</code>
+    <p>We are calling Math.random(), multiplying the result by 20, then passing the value to Math.floor() function to round the value down to the nearest whole number.</p>
+    <code></code>
+    <p></p>
+    <h3>Instructions</h3>
+    <p>Use this technique to generate and return a random whole number between 0 and 9.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
+
+function randomWholeNum() {
+
+  // Only change code below this line.
+
+  return Math.floor(Math.random() *10);
+}
+
+        </pre>
+</article>
+<article>
+    <h2>Generate Random Whole Numbers within a Range</h2>
+    <p>Instead of generating a random number between zero and a given number like we did before, we can generate a random number that falls within a range of two specific numbers.</p>
+    <p>To do this, we'll define a minimum number min and a maximum number max.
+
+        Here's the formula we'll use. Take a moment to read it and try to understand what this code is doing:</p>
+    <p></p>
+    <code>Math.floor(Math.random() * (max - min + 1)) + min</code>
+    <p></p>
+    <code></code>
+    <p></p>
+    <h3>Instructions</h3>
+    <p>Create a function called randomRange that takes a range myMin and myMax and returns a random number that's greater than or equal to myMin, and is less than or equal to myMax, inclusive.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+
+// Example
+function ourRandomRange(ourMin, ourMax) {
+
+  return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+}
+
+ourRandomRange(1, 9);
+
+// Only change code below this line.
+
+function randomRange(myMin, myMax) {
+
+  return Math.floor(Math.random() * (myMax - myMin +1))+myMin; // Change this line
+
+}
+
+// Change these values to test your function
+var myRandom = randomRange(5, 15);
+
+
+        </pre>
+</article>
+<article>
+    <h2>Sift through Text with Regular Expressions</h2>
+    <p>Regular expressions are used to find certain words or patterns inside of strings.
+
+        For example, if we wanted to find the word the in the string The dog chased the cat, we could use the following regular expression: /the/gi</p>
+    <p>Let's break this down a bit:
+
+        / is the start of the regular expression.
+
+        the is the pattern we want to match.
+
+        / is the end of the regular expression.
+
+        g means global, which causes the pattern to return all matches in the string, not just the first one.</p>
+    <p>i means that we want to ignore the case (uppercase or lowercase) when searching for the pattern.</p>
+    <code></code>
+    <p></p>
+    <code></code>
+    <p></p>
+    <h3>Instructions</h3>
+    <p>Select all the occurrences of the word and in testString.
+
+        You can do this by replacing the . part of the regular expression with the word and.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+// Setup
+var testString = "Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it.";
+
+// Example
+var expressionToGetSoftware = /software/gi;
+var softwareCount = testString.match(expressionToGetSoftware).length;
+
+
+// Only change code below this line.
+
+var expression = /and/gi;  // Change this Line
+
+// Only change code above this line
+
+// This code counts the matches of expression in testString
+var andCount = testString.match(expression).length;
+
+
+        </pre>
+</article>
+<article>
+    <h2>Find Numbers with Regular Expressions </h2>
+    <p>We can use special selectors in Regular Expressions to select a particular type of value.
+
+        One such selector is the digit selector \d which is used to retrieve one digit (e.g. numbers 0 to 9) in a string.
+
+        In JavaScript, it is used like this: /\d/g.</p>
+    <p>Appending a plus sign (+) after the selector, e.g. /\d+/g, allows this regular expression to match one or more digits.</p>
+    <p>The trailing g is short for 'global', which allows this regular expression to find all matches rather than stop at the first match.</p>
+    <code></code>
+    <p></p>
+    <code></code>
+    <p></p>
+    <h3>Instructions</h3>
+    <p>Use the \d selector to select the number of numbers in the string, allowing for the possibility of one or more digit.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+// Setup
+var testString = "There are 3 cats but 4 dogs.";
+
+// Only change code below this line.
+
+var expression = /\d+/g;  // Change this line
+
+// Only change code above this line
+
+// This code counts the matches of expression in testString
+var digitCount = testString.match(expression).length;
+
+        </pre>
+</article>
+<article>
+    <h2>Find Whitespace with Regular Expressions </h2>
+    <p>We can also use regular expression selectors like \s to find whitespace in a string.</p>
+    <p>The whitespace characters are " " (space), \r (the carriage return), \n (newline), \t (tab), and \f (the form feed).</p>
+    <p>The whitespace regular expression looks like this:</p>
+    <code>/\s+/g</code>
+    <p></p>
+    <code></code>
+    <p></p>
+    <h3>Instructions</h3>
+    <p>Use \s to select all the whitespace characters in the sentence string.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+// Setup
+var testString = "How many spaces are there in this sentence?";
+
+// Only change code below this line.
+
+var expression = /\s+/g;  // Change this line
+
+// Only change code above this line
+
+// This code counts the matches of expression in testString
+var spaceCount = testString.match(expression).length;
+        </pre>
+</article>
+<article>
+    <h2>Invert Regular Expression Matches with JavaScript </h2>
+    <p>You can invert any match by using the uppercase version of the regular expression selector.</p>
+    <p>For example, \s will match any whitespace, and \S will match anything that isn't whitespace.</p>
+    <p></p>
+    <code></code>
+    <p></p>
+    <code></code>
+    <p></p>
+    <h3>Instructions</h3>
+    <p>Use /\S/g to count the number of non-whitespace characters in testString.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+
+// Setup
+var testString = "How many non-space characters are there in this sentence?";
+
+// Only change code below this line.
+
+var expression = /\S/g;  // Change this line
+
+// Only change code above this line
+
+// This code counts the matches of expression in testString
+var nonSpaceCount = testString.match(expression).length;
+
+        </pre>
+</article>
+<article>
+    <h2>Target Elements by ID Using jQuery</h2>
+    <p>You can also target elements by their id attributes.
+
+        First target your button element with the id target3 by using the $("#target3") selector.</p>
+    <p>Note that, just like with CSS declarations, you type a # before the id's name.</p>
+    <p>Then use jQuery's .addClass() function to add the classes animated and fadeOut.</p>
+    <code></code>
+    <p>Here's how you'd make the button element with the id target6 fade out:</p>
+    <code>$("#target6").addClass("animated fadeOut").</code>
+    <p></p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+
+< script>
+  $(document).ready(function() {
+      $("button").addClass("animated bounce");
+      $(".well").addClass("animated shake");
+      $("#target3").addClass("animated fadeOut");
+  });
+< /script>
+
+        < !-- Only change code above this line. -->
+
+< div class="container-fluid">
+  < h3 class="text-primary text-center">jQuery Playground< /h3>
+  < div class="row">
+    < div class="col-xs-6">
+      < h4>#left-well< /h4>
+      < div class="well" id="left-well">
+        < button class="btn btn-default target" id="target1">#target1< /button>
+        < button class="btn btn-default target" id="target2">#target2< /button>
+        < button class="btn btn-default target" id="target3">#target3< /button>
+      < /div>
+    < /div>
+    < div class="col-xs-6">
+      < h4>#right-well< /h4>
+      < div class="well" id="right-well">
+        < button class="btn btn-default target" id="target4">#target4< /button>
+        < button class="btn btn-default target" id="target5">#target5< /button>
+        < button class="btn btn-default target" id="target6">#target6< /button>
+      < /div>
+    < /div>
+  < /div>
+< /div>
+
+        </pre>
+</article>
+<article>
+    <h2>Delete your jQuery Functions </h2>
+    <p>These animations were cool at first, but now they're getting kind of distracting.</p>
+    <p>Delete all three of these jQuery functions from your document ready function, but leave your document ready function itself intact.</p>
+    <p></p>
+    <code></code>
+    <p></p>
+    <code></code>
+    <p></p>
+    <p></p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+< script>
+  $(document).ready(function() {
+
+
+  });
+< /script>
+
+        <!-- Only change code above this line. -->
+
+< div class="container-fluid">
+  < h3 class="text-primary text-center">jQuery Playground< /h3>
+  < div class="row">
+    < div class="col-xs-6">
+      < h4>#left-well< /h4>
+      < div class="well" id="left-well">
+        < button class="btn btn-default target" id="target1">#target1< /button>
+        < button class="btn btn-default target" id="target2">#target2< /button>
+        < button class="btn btn-default target" id="target3">#target3< /button>
+      < /div>
+    < /div>
+    < div class="col-xs-6">
+      < h4>#right-well< /h4>
+      < div class="well" id="right-well">
+        < button class="btn btn-default target" id="target4">#target4< /button>
+        < button class="btn btn-default target" id="target5">#target5< /button>
+        < button class="btn btn-default target" id="target6">#target6< /button>
+      < /div>
+    < /div>
+  < /div>
+< /div>
+
+        </pre>
+</article>
+<article>
+    <h2>Target the same element with multiple jQuery Selectors </h2>
+    <p>Now you know three ways of targeting elements: by type: $("button"), by class: $(".btn"), and by id $("#target1").</p>
+    <p>Although it is possible to add multiple classes in a single .addClass() call, let's add them to the same element in three separate ways.</p>
+    <p>Using .addClass(), add only one class at a time to the same element, three different ways:
+
+        Add the animated class to all elements with type button.
+
+        Add the shake class to all the buttons with class .btn.
+
+        Add the btn-primary class to the button with id #target1.</p>
+    <code></code>
+    <p></p>
+    <code></code>
+    <p></p>
+    <h3>Note</h3>
+    <p>You should only be targeting one element and adding only one class at a time. Altogether, your three individual selectors will end up adding the three classes shake, animated, and btn-primary to #target1.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+< script>
+  $(document).ready(function() {
+      $("button").addClass("animated");
+      $(".btn").addClass("shake");
+      $("#target1").addClass("btn-primary");
+
+  });
+< /script>
+
+        <!-- Only change code above this line. -->
+
+< div class="container-fluid">
+  < h3 class="text-primary text-center">jQuery Playground< /h3>
+  < div class="row">
+    < div class="col-xs-6">
+      < h4>#left-well< /h4>
+      < div class="well" id="left-well">
+        < button class="btn btn-default target" id="target1">#target1< button>
+        < button class="btn btn-default target" id="target2">#target2< /button>
+        < button class="btn btn-default target" id="target3">#target3< /button>
+      < /div>
+    < /div>
+    < div class="col-xs-6">
+      < h4>#right-well< /h4>
+      < div class="well" id="right-well">
+        < button class="btn btn-default target" id="target4">#target4< /button>
+        < button class="btn btn-default target" id="target5">#target5< /button>
+        < button class="btn btn-default target" id="target6">#target6< /button>
+      < /div>
+    < /div>
+  < /div>
+< /div>
+
+        </pre>
+</article>
+<article>
+    <h2>Remove Classes from an element with jQuery</h2>
+    <p>In the same way you can add classes to an element with jQuery's addClass() function, you can remove them with jQuery's removeClass() function.</p>
+    <p>Here's how you would do this for a specific button:
+
+        $("#target2").removeClass("btn-default");
+
+        Let's remove the btn-default class from all of our button elements.</p>
+    <p></p>
+    <code></code>
+    <p></p>
+    <code></code>
+    <p></p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+
+< script>
+  $(document).ready(function() {
+      $("button").addClass("animated bounce");
+      $(".well").addClass("animated shake");
+      $("#target3").addClass("animated fadeOut");
+      $("button").removeClass("btn-default");
+  });
+< /script>
+
+        <!-- Only change code above this line. -->
+
+< div class="container-fluid">
+  < h3 class="text-primary text-center">jQuery Playground< /h3>
+  < div class="row">
+    < div class="col-xs-6">
+      < h4>#left-well< /h4>
+      < div class="well" id="left-well">
+        < button class="btn btn-default target" id="target1">#target1< /button>
+        < button class="btn btn-default target" id="target2">#target2< /button>
+        < button class="btn btn-default target" id="target3">#target3< /button>
+      < /div>
+    < /div>
+    < div class="col-xs-6">
+      < h4>#right-well< /h4>
+      < div class="well" id="right-well">
+        < button class="btn btn-default target" id="target4">#target4< /button>
+        < button class="btn btn-default target" id="target5">#target5< /button>
+        < button class="btn btn-default target" id="target6">#target6< /button>
+      < /div>
+    < /div>
+  < /div>
+< /div>
+
+        </pre>
+</article>
+<article>
+    <h2>Change the CSS of an Element Using jQuery </h2>
+    <p>We can also change the CSS of an HTML element directly with jQuery.</p>
+    <p>jQuery has a function called .css() that allows you to change the CSS of an element.</p>
+    <p>Here's how we would change its color to blue:
+
+        $("#target1").css("color", "blue");
+
+        This is slightly different from a normal CSS declaration, because the CSS property and its value are in quotes, and separated with a comma instead of a colon.</p>
+    <code></code>
+    <p>Delete your jQuery selectors, leaving an empty document ready function.
+
+        Select target1 and change its color to red.</p>
+    <code></code>
+    <p></p>
+    <p></p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+
+< script>
+  $(document).ready(function() {
+      $("button").addClass("animated bounce");
+      $(".well").addClass("animated shake");
+      $("#target3").addClass("animated fadeOut");
+      $("button").removeClass("btn-default");
+      $("#target1").css("color","red");
+  });
+< /script>
+
+        <!-- Only change code above this line. -->
+
+< div class="container-fluid">
+  < h3 class="text-primary text-center">jQuery Playground< /h3>
+  < div class="row">
+     < div class="col-xs-6">
+      < h4>#left-well< /h4>
+      < div class="well" id="left-well">
+        < button class="btn btn-default target" id="target1">#target1< /button>
+        < button class="btn btn-default target" id="target2">#target2< /button>
+        < button class="btn btn-default target" id="target3">#target3< /button>
+      < /div>
+    < /div>
+    < div class="col-xs-6">
+      < h4>#right-well< /h4>
+      < div class="well" id="right-well">
+        < button class="btn btn-default target" id="target4">#target4< /button>
+        < button class="btn btn-default target" id="target5">#target5< /button>
+        < button class="btn btn-default target" id="target6">#target6< /button>
+      < /div>
+    < /div>
+  < /div>
+< /div>
+
+        </pre>
+</article>
+
+</body>
+</html>

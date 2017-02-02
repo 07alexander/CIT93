@@ -1,0 +1,176 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*FlexBox Holygrail from MDn*/
+body {
+    font: 24px Helvetica;
+    background: #999999;
+    background-image: url('../img/background.jpg');
+}
+
+#main {
+    min-height: 800px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row;
+}
+
+#main > article {
+    background: transparent;
+    flex: 3 1 60%;
+    order: 2;
+}
+
+#main > nav {
+    background: #333333;
+    flex: 1 6 20%;
+    order: 1;
+    font-size: 20px;
+    border-right: 1px solid #d8d1db;
+}
+
+#main > aside {
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #8888bb;
+    border-radius: 7pt;
+    background: #263D42;
+    flex: 1 6 20%;
+    order: 3;
+    font-size: 20px;
+}
+
+header, footer {
+    display: block;
+    margin: 4px;
+    padding: 10px;
+    min-height: 100px;
+    border: 1px solid #eebb55;
+    border-radius: 7pt;
+    background: #ffeebb;
+    background-image: url('../img/clock.jpg');
+    background-repeat: no-repeat;
+    background-size:100%;
+    background-position: center;
+}
+
+/* Too narrow to support three columns */
+@media all and (max-width: 640px) {
+    #main, #page {
+        flex-direction: column;
+    }
+
+    #main > article, #main > nav, #main > aside {
+        /* Return them to document order */
+        order: 0;
+    }
+
+    #main > nav, #main > aside, header, footer {
+        min-height: 50px;
+        max-height: 50px;
+    }
+}
+
+.not-visible{
+    display:none;
+}
+.visible{
+    display:block;
+}
+body {
+    padding-top: 60px;
+    font-family:'Open Sans', sans-serif;
+    text-align: center;
+}
+
+.color-change {
+
+    padding: 2px 45px;
+    cursor: pointer;
+    color: #80CED7;
+    background-color: #626867;
+    font-size: 1.5rem;
+    font-family:'Open Sans', sans-serif;
+    font-weight: 100;
+    border: 1px solid #fff;
+    box-shadow: 2px 2px 5px #AFE9FF;
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+}
+
+.color-change:hover {
+    color: #ffffff;
+    border: 1px solid #CCDBDC;
+    box-shadow: 2px 2px 20px #dedde2;
+}
+
+button.color-change {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.flex-container {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: stretch;
+}
+
+.flex-items {
+    width: 300px;
+    height: 250px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 0;
+    background-color: #AEAEAE;
+    opacity: .6;
+}
+

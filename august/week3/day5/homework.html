@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel=stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div>
+    <header>
+        <h1>FreeCodeCamp.com Homework for Week2 Day 5</h1>
+    </header>
+    <article>
+        <h2>Increment a Number with JavaScript</h2>
+        <p>You can easily increment or add one to a variable with the ++ operator.</p>
+        <p>i++;</p>
+        <p>i = i + 1;</p>
+        <h4>Note</h4>
+        <p>The entire line becomes i++;, eliminating the need for the equal sign.</p>
+        <h3>Instructions</h3>
+        <p>Change the code to use the ++ operator on myVar.</p>
+        <h4>Hint</h4>
+        <p>Learn more about Arithmetic operators-Increment(++)</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        var myVar = 87;
+
+        // Only change code below this line
+        myVar++;
+            </pre>
+    </article>
+    <article>
+        <h2>Decrement a Number with JavaScript</h2>
+        <p>You can easily decrement or decrease a variable by one with the -- operator.</p>
+        <p>i--;</p>
+        <p>is the equivalent of</p>
+        <p>i = i - 1;</p>
+        <h4>Note</h4>
+        <p>The entire line becomes i--;, eliminating the need for the equal sign.</p>
+        <h3>Instructions</h3>
+        <p>Change the code to use the -- operator on myVar.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        var myVar = 11;
+
+        // Only change code below this line
+        myVar--;
+            </pre>
+    </article>
+    <article>
+        <h2>Create Decimal Numbers with JavaScript</h2>
+        <p>We can store decimal numbers in variables too. Decimal numbers are sometimes referred to as floating point numbers or floats.</p>
+        <h4>Note</h4>
+        <p>Not all real numbers can accurately be represented in floating point. This can lead to rounding errors. Details Here./p>
+        <h3>Instructions</h3>
+        <p>Create a variable myDecimal and give it a decimal value with a fractional part (e.g. 5.7).</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        var ourDecimal = 5.7;
+
+        // Only change code below this line
+        var myDecimal =3.3;
+            </pre>
+    </article>
+    <article>
+        <h2>Multiply Two Decimals with JavaScript</h2>
+        <p>In JavaScript, you can also perform calculations with decimal numbers, just like whole numbers.</p>
+        <p>Let's multiply two decimals together to get their product.</p>
+        <h3>Instructions</h3>
+        <p>Change the 0.0 so that product will equal 5.0.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        var product = 2.0 * 2.5;
+
+            </pre>
+    </article>
+    <article>
+        <h2>Divide one Decimal by Another with JavaScript</h2>
+        <p>Now let's divide one decimal by another.</p>
+        <h3>Instructions</h3>
+        <p>Change the 0.0 so that quotient will equal to 2.2.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        var quotient = 4.4 / 2.0;
+            </pre>
+    </article>
+    <article>
+        <h2>Finding a Remainder in JavaScript</h2>
+        <p>The remainder operator % gives the remainder of the division of two numbers.</p>
+        <h4>Example</h4>
+        <pre class="prettyprint html-js">
+5 % 2 = 1 because
+Math.floor(5 / 2) = 2 (Quotient)
+2 * 2 = 4
+5 - 4 = 1 (Remainder)
+            </pre>
+        <h4>Usage</h4>
+        <p>In mathematics, a number can be checked even or odd by checking the remainder of the division of the number by 2.</p>
+        <pre class="prettyprint html-js">
+17 % 2 = 1 (17 is Odd)
+48 % 2 = 0 (48 is Even)
+            </pre>
+        <h4>Note</h4>
+        <p>The remainder operator is sometimes incorrectly referred to as the "modulus" operator. It is very similar to modulus, but does not work properly with negative numbers.</p>
+        <h3>Instructions</h3>
+        <p>Set remainder equal to the remainder of 11 divided by 3 using the remainder (%) operator.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Only change code below this line
+
+        var remainder =11%3;
+            </pre>
+    </article>
+    <article>
+        <h2>Compound Assignment With Augmented Addition</h2>
+        <p>In programming, it is common to use assignments to modify the contents of a variable. Remember that everything to the right of the equals sign is evaluated first, so we can say:</p>
+        <p>myVar = myVar + 5;</p>
+        <p>to add 5 to myVar. Since this is such a common pattern, there are operators which do both a mathematical operation and assignment in one step.
+
+        </p>
+        <p>One such operator is the += operator.</p>
+        <p>myVar += 5; will add 5 to myVar.</p>
+        <h3>Instructions</h3>
+        <p>Convert the assignments for a, b, and c to use the += operator.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        var a = 3;
+        var b = 17;
+        var c = 12;
+
+        // Only modify code below this line
+
+        a += 12;
+        b += 9;
+        c += 7;
+            </pre>
+    </article>
+    <article>
+        <h2>Compound Assignment With Augmented Subtraction</h2>
+        <p>Like the += operator, -= subtracts a number from a variable.</p>
+        <p>myVar = myVar - 5;</p>
+        <p>will subtract 5 from myVar. This can be rewritten as:</p>
+        <p>myVar -= 5;</p>
+        <h3>Instructions</h3>
+        <p>Convert the assignments for a, b, and c to use the -= operator.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        var a = 11;
+        var b = 9;
+        var c = 3;
+
+        // Only modify code below this line
+
+        a -= 6;
+        b -= 15;
+        c -= 1;
+            </pre>
+    </article>
+    <article>
+        <h2>Compound Assignment With Augmented Multiplication</h2>
+        <p>The *= operator multiplies a variable by a number.</p>
+        <p>myVar = myVar * 5;</p>
+        <p>will multiply myVar by 5. This can be rewritten as:</p>
+        <p>myVar *= 5;</p>
+        <h3>Instructions</h3>
+        <p>Convert the assignments for a, b, and c to use the *= operator.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        var a = 5;
+        var b = 12;
+        var c = 4.6;
+
+        // Only modify code below this line
+
+        a *= 5;
+        b *= 3;
+        c *= 10;
+            </pre>
+    </article>
+    <article>
+        <h2>Compound Assignment With Augmented Division</h2>
+        <p>The /= operator divides a variable by another number.</p>
+        <p>myVar = myVar / 5;</p>
+        <p>Will divide myVar by 5. This can be rewritten as:</p>
+        <p>myVar /= 5;</p>
+        <h3>Instructions</h3>
+        <p>Convert the assignments for a, b, and c to use the /= operator.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        var a = 48;
+        var b = 108;
+        var c = 33;
+
+        // Only modify code below this line
+
+        a /= 12;
+        b /= 4;
+        c /= 11;
+            </pre>
+    </article>
+    <article>
+        <h2>Convert Celsius to Fahrenheit </h2>
+        <p>To test your learning, you will create a solution "from scratch". Place your code between the indicated lines and it will be tested against multiple test cases.</p>
+        <p>The algorithm to convert from Celsius to Fahrenheit is the temperature in Celsius times 9/5, plus 32.</p>
+        <p>You are given a variable celsius representing a temperature in Celsius. Use the variable fahrenheit already defined and apply the algorithm to assign it the corresponding temperature in Fahrenheit.</p>
+        <h4>Note</h4>
+        <p>Don't worry too much about the function and return statements as they will be covered in future challenges. For now, only use operators that you have already learned.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        function convertToF(celsius) {
+          var fahrenheit;
+          // Only change code below this line
+          fahrenheit= ((celsius*(9/5)) +32);
+          // Only change code above this line
+          return fahrenheit;
+        }
+
+        // Change the inputs below to test your code
+        convertToF(30);
+            </pre>
+    </article>
+    <article>
+        <h2>Declare String Variables</h2>
+        <p>Previously we have used the code</p>
+        <p>var myName = "your name";</p>
+        <p>"your name" is called a string literal. It is a string because it is a series of zero or more characters enclosed in single or double quotes.</p>
+        <h3>Instructions</h3>
+        <p>Create two new string variables: myFirstName and myLastName and assign them the values of your first and last name, respectively.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Example
+        var firstName = "Alan";
+        var lastName = "Turing";
+
+        // Only change code below this line
+
+        var myFirstName= "alex";
+        var myLastName= "p";
+            </pre>
+    </article>
+    <article>
+        <h2>Escaping Literal Quotes in Strings</h2>
+        <p>When you are defining a string you must start and end with a single or double quote. What happens when you need a literal quote: " or ' inside of your string?</p>
+        <p>In JavaScript, you can escape a quote from considering it as an end of string quote by placing a backslash (\) in front of the quote.</p>
+        <p>var sampleStr = "Alan said, \"Peter is learning JavaScript\".";</p>
+        <p>This signals to JavaScript that the following quote is not the end of the string, but should instead appear inside the string. So if you were to print this to the console, you would get:</p>
+        <p>Alan said, "Peter is learning JavaScript".</p>
+        <h3>Instructions</h3>
+        <p>Use backslashes to assign a string to the myStr variable so that if you were to print it to the console, you would see:</p>
+        <p>I am a "double quoted" string inside "double quotes".</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        var myStr = "I am a \"double quoted\" string inside \"double quotes\"." ; // Change this line
+            </pre>
+    </article>
+    <article>
+        <h2>Quoting Strings with Single Quotes </h2>
+        <p>String values in JavaScript may be written with single or double quotes, so long as you start and end with the same type of quote. Unlike some languages, single and double quotes are functionally identical in JavaScript.</p>
+        <p>"This string has \"double quotes\" in it"</p>
+        <p>The value in using one or the other has to do with the need to escape quotes of the same type. Unless they are escaped, you cannot have more than one pair of whichever quote type begins a string./p>
+        <p>If you have a string with many double quotes, this can be difficult to read and write. Instead, use single quotes:</p>
+        <p>'This string has "double quotes" in it. And "probably" lots of them.'</p>
+        <h3>Instructions</h3>
+        <p>Change the provided string from double to single quotes and remove the escaping.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        var myStr =" '<a href="http://www.example.com" target="_blank">Link</a>';
+            </pre>
+    </article>
+    <article>
+        <h2>Escape Sequences in Strings</h2>
+        <p>Quotes are not the only characters that can be escaped inside a string. Here is a table of common escape sequences:</p>
+        <h2>Code||Output</h2>                        <pre class="prettyprint html-js">
+\'	single quote
+\"	double quote
+\\	backslash
+\n	newline
+\r	carriage return
+\t	tab
+\b	backspace
+\f	form feed
+            </pre>
+        <p>Note that the backslash itself must be escaped in order to display as a backslash.</p>
+        <h3>Instructions</h3>
+        <p>Assign the following three lines of text into the single variable myStr using escape sequences.</p>
+        <pre class="prettyprint html-js">
+        FirstLine
+        \SecondLine\
+        ThirdLine
+            </pre>
+        <p>You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above, with no spaces between escape sequences or words.</p>
+        <p>Here is the text with the escape sequences written out.</p>
+        <p>"FirstLinenewlinebackslashSecondLinebackslashcarriage-returnThirdLine"</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        var myStr = "FirstLine\n\\SecondLine\\\rThirdLine"; // Change this line
+            </pre>
+    </article>
+</div>
+
+</body>
+</html>

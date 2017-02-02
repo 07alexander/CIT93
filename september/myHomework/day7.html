@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel=stylesheet" href="../../august/css/style.css">
+</head>
+<body>
+<div>
+    <header>
+        <h1>FreeCodeCamp.com Homework for Week4 Day 7</h1>
+    </header>
+    <article>
+        <h2>Concatenating Strings with Plus Operator</h2>
+        <p>In JavaScript, when the + operator is used with a String value, it is called the concatenation operator. You can build a new string out of other strings by concatenating them together.</p>
+        <h4>Example</h4>
+        <p>'My name is Alan,' +' I concatenate.'</p>
+        <h4>Note</h4>
+        <p>Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.</p>
+        <h3>Instructions</h3>
+        <p>Build myStr from the strings "This is the start. " and "This is the end." using the + operator.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Example
+        var ourStr = "I come first. " + "I come second.";
+
+        // Only change code below this line
+
+        var myStr= "This is the start. " + "This is the end.";
+            </pre>
+    </article>
+    <article>
+        <h2>Concatenating Strings with the Plus Equals Operator</h2>
+        <p>We can also use the += operator to concatenate a string onto the end of an existing string variable. This can be very helpful to break a long string over several lines.</p>
+        <h4>Note</h4>
+        <p>Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.</p>
+        <h3>Instructions</h3>
+        <p>Build myStr over several lines by concatenating these two strings:
+            "This is the first sentence. " and "This is the second sentence." using the += operator.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Example
+        var ourStr = "I come first. ";
+        ourStr += "I come second.";
+
+        // Only change code below this line
+
+        var myStr="This is the first sentence. ";
+        myStr+="This is the second sentence.";
+            </pre>
+    </article>
+    <article>
+        <h2>Constructing Strings with Variables</h2>
+        <p>Sometimes you will need to build a string, Mad Libs style. By using the concatenation operator (+), you can insert one or more variables into a string you're building.</p>
+        <h3>Instructions</h3>
+        <p>Set myName to a string equal to your name and build myStr with myName between the strings "My name is " and " and I am swell!"</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Example
+        var ourName = "Free Code Camp";
+        var ourStr = "Hello, our name is " + ourName + ", how are you?";
+
+        // Only change code below this line
+        var myName="alex";
+        var myStr="My name is" + myName + "and I am swell!";
+            </pre>
+    </article>
+    <article>
+        <h2>Appending Variables to Strings</h2>
+        <p>Just as we can build a string over multiple lines out of string literals, we can also append variables to a string using the plus equals (+=) operator.</p>
+        <h3>Instructions</h3>
+        <p>Set someAdjective and append it to myStr using the += operator.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Example
+        var anAdjective = "awesome!";
+        var ourStr = "Free Code Camp is ";
+        ourStr += anAdjective;
+
+        // Only change code below this line
+
+        var someAdjective ="cool";
+        var myStr = "Learning to code is ";
+        myStr += someAdjective;
+            </pre>
+    </article>
+    <article>
+        <h2>Find the Length of a String</h2>
+        <p>You can find the length of a String value by writing .length after the string variable or string literal.</p>
+        <p>"Alan Peter".length; // 10</p>
+        <p>For example, if we created a variable var firstName = "Charles", we could find out how long the string "Charles" is by using the firstName.length property.</p>
+        <h3>Instructions</h3>
+        <p>Use the .length property to count the number of characters in the lastName variable and assign it to lastNameLength.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Example
+        var firstNameLength = 0;
+        var firstName = "Ada";
+
+        firstNameLength = firstName.length;
+
+        // Setup
+        var lastNameLength = 0;
+        var lastName = "Lovelace";
+
+        // Only change code below this line.
+
+        lastNameLength = lastName.length;
+            </pre>
+    </article>
+    <article>
+        <h2>Use Bracket Notation to Find the First Character in a String</h2>
+        <p>Bracket notation is a way to get a character at a specific index within a string.</p>
+        <p>Most modern programming languages, like JavaScript, don't start counting at 1 like humans do. They start at 0. This is referred to as Zero-based indexing.</p>
+        <p>For example, the character at index 0 in the word "Charles" is "C". So if var firstName = "Charles", you can get the value of the first letter of the string by using firstName[0].</p>
+        <h3>Instructions</h3>
+        <p>Use bracket notation to find the first character in the lastName variable and assign it to firstLetterOfLastName.</p>
+        <h4>Hint</h4>
+        <p>Try looking at the firstLetterOfFirstName variable declaration if you get stuck.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Example
+        var firstLetterOfFirstName = "";
+        var firstName = "Ada";
+
+        firstLetterOfFirstName = firstName[0];
+
+        // Setup
+        var firstLetterOfLastName = "";
+        var lastName = "Lovelace";
+
+        // Only change code below this line
+        firstLetterOfLastName = lastName[0];
+            </pre>
+    </article>
+    <article>
+        <h2>Understand String Immutability </h2>
+        <p>In JavaScript, String values are immutable, which means that they cannot be altered once created.</p>
+        <p>For example, the following code:</p>
+       <code>var myStr = "Bob";
+           myStr[0] = "J";</code>
+        <p>cannot change the value of myStr to "Job", because the contents of myStr cannot be altered. Note that this does not mean that myStr cannot be changed, just that the individual characters of a string literal cannot be changed. The only way to change myStr would be to assign it with a new string, like this:</p>
+        <code>var myStr = "Bob";
+            myStr = "Job";</code>
+        <h3>Instructions</h3>
+        <p>Correct the assignment to myStr to achieve the desired effect.</p>p>
+        <pre class="prettyprint html-js">
+        // Setup
+        var myStr = "Jello World";
+
+        // Only change code below this line
+
+        myStr = "Hello World"; // Fix Me
+            </pre>
+    </article>
+    <article>
+        <h2>Use Bracket Notation to Find the Nth Character in a String</h2>
+        <p>You can also use bracket notation to get the character at other positions within a string.</p>
+        <p>Remember that computers start counting at 0, so the first character is actually the zeroth character.</p>
+        <h3>Instructions</h3>
+        <p>Let's try to set thirdLetterOfLastName to equal the third letter of the lastName variable using bracket notation.</p>
+        <h4>Hint</h4>
+        <p>Try looking at the secondLetterOfFirstName variable declaration if you get stuck.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Example
+        var firstName = "Ada";
+        var secondLetterOfFirstName = firstName[1];
+
+        // Setup
+        var lastName = "Lovelace";
+
+        // Only change code below this line.
+        var thirdLetterOfLastName = lastName[2];
+            </pre>
+    </article>
+    <article>
+        <h2>Use Bracket Notation to Find the Last Character in a String</h2>
+        <p>In order to get the last letter of a string, you can subtract one from the string's length.</p>
+        <p>For example, if var firstName = "Charles", you can get the value of the last letter of the string by using firstName[firstName.length - 1].</p>
+        <h3>Instructions</h3>
+        <p>Use bracket notation to find the last character in the lastName variable.</p>
+        <h4>Hint</h4>
+        <p>Try looking at the lastLetterOfFirstName variable declaration if you get stuck.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Example
+        var firstName = "Ada";
+        var lastLetterOfFirstName = firstName[firstName.length - 1];
+
+        // Setup
+        var lastName = "Lovelace";
+
+        // Only change code below this line.
+        var lastLetterOfLastName = lastName[lastName.length -1];
+            </pre>
+    </article>
+    <article>
+        <h2>Use Bracket Notation to Find the NthtoLast Character in a String </h2>
+        <p>You can use the same principle we just used to retrieve the last character in a string to retrieve the Nth-to-last character.</p>
+        <p>For example, you can get the value of the third-to-last letter of the var firstName = "Charles" string by using firstName[firstName.length - 3]</p>
+        <h3>Instructions</h3>
+        <p>Use bracket notation to find the second-to-last character in the lastName string.</p>
+        <h4>Hint</h4>
+        <p>Try looking at the thirdToLastLetterOfFirstName variable declaration if you get stuck.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Example
+        var firstName = "Ada";
+        var thirdToLastLetterOfFirstName = firstName[firstName.length - 3];
+
+        // Setup
+        var lastName = "Lovelace";
+
+        // Only change code below this line
+        var secondToLastLetterOfLastName = lastName[lastName.length -2];
+
+
+            </pre>
+    </article>
+    <article>
+        <h2>Word Blanks</h2>
+        <p>We will now use our knowledge of strings to build a "Mad Libs" style word game we're calling "Word Blanks". You will create an (optionally humorous) "Fill in the Blanks" style sentence.</p>
+        <p>You will need to use string operators to build a new string, result, using the provided variables: myNoun, myAdjective, myVerb, and myAdverb.</p>
+        <p>You will also need to use additional strings, which will not change, and must be in between all of the provided words. The output should be a complete sentence.</p>
+        <p>We have provided a framework for testing your results with different words. The tests will run your function with several different inputs to make sure all of the provided words appear in the output, as well as your extra strings.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {
+          var result = "";
+          // Your code below this line
+          result="hi "+myNoun+" there "+myAdjective+"to "+myVerb+" me "+myAdverb;
+
+          // Your code above this line
+          return result;
+        }
+
+        // Change the words here to test your function
+        wordBlanks("dog", "big", "ran", "quickly");
+            </pre>
+    </article>
+    <article>
+        <h2>Store Multiple Values in one Variable using JavaScript Arrays</h2>
+        <p>With JavaScript array variables, we can store several pieces of data in one place.</p>
+        <p>You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this:</p>
+        <p>var sandwich = ["peanut butter", "jelly", "bread"].</p>
+        <h3>Instructions</h3>
+        <p>Modify the new array myArray so that it contains both a string and a number (in that order).</p>
+        <h4>Hint</h4>
+        <p>Refer to the example code in the text editor if you get stuck.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Example
+        var ourArray = ["John", 23];
+
+        // Only change code below this line.
+        var myArray = ["alex", 2];
+            </pre>
+    </article>
+    <article>
+        <h2>Nest one Array within Another Array</h2>
+        <p>You can also nest arrays within other arrays, like this: [["Bulls", 23], ["White Sox", 45]]. This is also called a Multi-dimensional Array.</p>
+        <h3>Instructions</h3>
+        <p>Create a nested array called myArray.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Example
+        var ourArray = [["the universe", 42], ["everything", 101010]];
+
+        // Only change code below this line.
+        var myArray = [[-3,3],[2,2]];
+            </pre>
+    </article>
+    <article>
+        <h2>Access Array Data with Indexes </h2>
+        <p>We can access the data inside arrays using indexes.</p>
+        <p>Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use zero-based indexing, so the first element in an array is element 0.</p>
+        <h4>Example</h4>
+        <code>var array = [1,2,3];
+            array[0]; // equals 1
+            var data = array[1];  // equals 2</code>
+        <h3>Instructions</h3>
+        <p>Create a variable called myData and set it to equal the first value of myArray using bracket notation.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Example
+        var ourArray = [1,2,3];
+        var ourData = ourArray[0]; // equals 1
+
+        // Setup
+        var myArray = [1,2,3];
+
+        // Only change code below this line.
+
+        var myData = myArray[0];
+            </pre>
+    </article>
+    <article>
+        <h2>Modify Array Data With Indexes</h2>
+        <p>Unlike strings, the entries of arrays are mutable and can be changed freely.</p>
+        <h4>Example</h4>
+        <code>var ourArray = [3,2,1];
+            ourArray[0] = 1; // equals [1,2,1]</code>
+        <h3>Instructions</h3>
+        <p>Modify the data stored at index 0 of myArray to a value of 3.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Example
+        var ourArray = [1,2,3];
+        ourArray[1] = 3; // ourArray now equals [1,3,3].
+
+        // Setup
+        var myArray = [1,2,3];
+
+        // Only change code below this line.
+
+        myArray[0]=3;
+            </pre>
+    </article>
+</div>
+
+</body>
+</html>

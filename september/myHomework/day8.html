@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Homework Week 4 Day 8 : Udemy - JavaScript the Weird Parts</h1>
+    <h2>Section 2 Lecture 9 - The Global Environment and The Global Object</h2>
+        <ul>
+            <li>Execution Context: Your base execution context is the global execution context.</li>
+            <li>Global execution context creates a global object and 'this'.</li>
+            <li>The javascript engine will create 'this' even when you haven't written any code</li>
+            <li>Global: not an inside function</li>
+        </ul>
+    <h2>Section 2 Lecture 10 - The Global Environment, Execution Context, Creation and Hoisting</h2>
+    <ul>
+        <li>Hoisting: variables and function are moved to the top by the JavaScript engine as if they were moved physically up to the top</li>
+        <li>The execution context is created in two phases; Creation Phase and Execution Phase</li>
+        <li>The Creation Phase: Setting up Global object, 'this', Outer Environment, and it also sets up memory space for variable and functions for "Hoisting"</li>
+        <li>The JavaScript Engine in the Execution Phase likes to put placeholders to make all variables initially undefined. </li>
+        <li>The JavaScript Engine translates my code and then make decisions on what to do what that code instead of directly executing my code </li>
+    </ul>
+    <h2>Section 2 Lecture 11 - Conceptual Aside: Javascript and 'undefined'</h2>
+    <ul>
+        <li>Undefined and not defined are two different things</li>
+        <li>Undefined actually means that the variable hasn't actually been set</li>
+        <li>Not defined is when a variable you are trying to reference is not declared in memory</li>
+        <li>Setting values to undefined manually is bad because it'll make debugging harder ;you won't know whether you set it to undefined or if the engine did</li>
+    </ul>
+    <h2>Section 2 Lecture 12 - The Execution Context - Code Execution</h2>
+    <ul>
+        <li>The execution phase, when it's time to run your code, line by line</li>
+        <li>Code Execution happens after the first phase, the Creation Phase</li>
+        <li>This is when the engine is interpreting it, converting it, compiling it and executing it on the computer. </li>
+    </ul>
+    <h2>Section 2 Lecture 13 - Conceptual Aside: Single Threaded, Synchronous Execution</h2>
+    <ul>
+        <li>Single Threaded: One command at a time; under the hood of the browser, maybe not.</li>
+        <li>JavaScript behaves in a single threaded manner</li>
+        <li>Synchronous: One at a time; and in order...</li>
+        <li>The code is executed one line at time in the order they appear</li>
+    </ul>
+</body>
+</html>

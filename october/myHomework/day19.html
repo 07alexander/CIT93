@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel=stylesheet" href="../../august/css/style.css">
+</head>
+<body>
+<h1>Feature I</h1>
+<p>To be able to click on buttons in the nav and be able bring up the associated page for the button, For Example: clicking inbox will open the inbox page, clicking on today button will show to-do list for today and so on..
+</p>
+<pre class="prettyprint">
+    //Using something like this from the ottergram script might work for my case
+    // injecting a eventlistener onto the buttons will allow me implement this feature
+    //Clicking on the button will 'show' a certain page depending the button, so inbox for inbox items, today for today items and so on...
+
+    function addThumbClickHandler(thumb) {
+  thumb.addEventListener('click', function (event) {
+    event.preventDefault();
+    setDetailsFromThumb(thumb);
+    showDetails();
+  });
+}
+</pre>
+
+<h1>Feature II</h1>
+<p>Inside a to-do list, be able to add to to-do list with a click of a button</p>
+<pre class="prettyprint">
+    //Using a list object, I could create an object and keep on adding values to the list
+    var lists ={
+        "inbox":"items",
+        "today":"items",
+        "week":"items"
+    };
+    //Then after creating the object I could push onto the list
+    //using the same event listener from the first feature to listen for a click then
+    lists.push(inbox);
+</pre>
+
+<h1>Feature III</h1>
+<p>Checking off a task will remove it from the to-do list</p>
+<pre class="prettyprint">
+
+    //Using something like this I could check if a task is checked and then delete it from the to-do list or maybe push it to a history list
+    //For example: If in today to-do list, it says homework with a checkbox next to it, and if you click on the box, it will delete the item from the list
+
+    //With a checkbox object
+
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "checkbox");
+
+    //Using the eventlistener from feature I to check for mouse clicks
+
+    function check() {
+    document.getElementById("myCheck").checked = true;
+}
+    function uncheck() {
+    document.getElementById("myCheck").checked = false;
+}
+</pre>
+</body>
+</html>

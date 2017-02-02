@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel=stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div>
+    <header>
+        <h1>FreeCodeCamp.com Homework for Week2 Day 4</h1>
+    </header>
+    <article>
+        <h2>Comment your JavaScript Code</h2>
+        <p>Comments are lines of code that JavaScript will intentionally ignore. Comments are a great way to leave notes to yourself and to other people who will later need to figure out what that code does.</p>
+        <p>There are two ways to write comments in JavaScript:</p>
+
+        <p>Using // will tell JavaScript to ignore the remainder of the text on the current line:</p>
+        <code>// This is an in-line comment.</code>
+        <p>You can make a multi-line comment beginning with /* and ending with */:</p>
+        <code>/* This is a
+            multi-line comment */</code>
+        <h3>Best Practice</h3>
+        <p>As you write code, you should regularly add comments to clarify the function of parts of your code. Good commenting can help communicate the intent of your code—both for others and for your future self.</p>
+        <h3>Instructions</h3>
+        <p>Try creating one of each type of comment.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+            // hello
+            /* hello there
+            person */
+        </pre>
+    </article>
+    <article>
+        <h2>Declare JavaScript Variables</h2>
+        <p>In computer science, data is anything that is meaningful to the computer. JavaScript provides seven different data types which are undefined, null, boolean, string, symbol, number, and object.</p>
+        <p>For example, computers distinguish between numbers, such as the number 12, and strings, such as "12", "dog", or "123 cats", which are collections of characters. Computers can perform mathematical operations on a number, but not on a string.</p>
+        <p>Variables allow computers to store and manipulate data in a dynamic fashion. They do this by using a "label" to point to the data rather than using the data itself. Any of the seven data types may be stored in a variable.</p>
+        <p>Variables are similar to the x and y variables you use in mathematics, which means they're a simple name to represent the data we want to refer to. Computer variables differ from mathematical variables in that they can store different values at different times.</p>
+        <p>We tell JavaScript to create or declare a variable by putting the keyword var in front of it, like so:</p>
+        <code>var ourName;</code>
+        <p>creates a variable called ourName. In JavaScript we end statements with semicolons.</p>
+        <p>Variable names can be made up of numbers, letters, and $ or _, but may not contain spaces or start with a number.</p>
+        <h3>Instructions</h3>
+        <p>Use the var keyword to create a variable called myName.</p>
+        <h4>Hint</h4>
+        <p>Look at the ourName example if you get stuck.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Example
+        var ourName;
+
+        // Define myName below this line
+
+        var myName;
+        </pre>
+    </article>
+    <article>
+        <h2>Storing Values with the Assignment Operator</h2>
+        <p>In JavaScript, you can store a value in a variable with the assignment operator.</p>
+        <p>myVariable = 5;</p>
+        <p>Assigns the Number value 5 to myVariable.</p>
+        <p>Assignment always goes from right to left. Everything to the right of the = operator is resolved before the value is assigned to the variable to the left of the operator.</p>
+        <code>myVar = 5;
+            myNum = myVar;</code>
+        <p>Assigns 5 to myVar and then resolves myVar to 5 again and assigns it to myNum.</p>
+        <h3>Instructions</h3>
+        <p>Assign the value 7 to variable a.</p>
+        <p>Assign the contents of a to variable b.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+
+        // Setup
+        var a;
+        var b = 2;
+
+        // Only change code below this line
+        a=7;
+        b=a;
+        </pre>
+    </article>
+    <article>
+        <h2>Initializing Variables with the Assignment Operator</h2>
+        <p>
+            It is common to initialize a variable to an initial value in the same line as it is declared.</p>
+        <p>var myVar =0;</p>
+        <p>Creates a new variable called myVar and assigns it an initial value of 0.</p>
+        <h3>Instructions</h3>
+        <p>Define a variable a with var and initialize it to a value of 9.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Example
+        var ourVar = 19;
+
+        // Only change code below this line
+
+        var a=9;
+            </pre>
+    </article>
+    <article>
+        <h2>Understanding Uninitialized Variables</h2>
+        <p>When JavaScript variables are declared, they have an initial value of undefined. If you do a mathematical operation on an undefined variable your result will be NaN which means "Not a Number". If you concatenate a string with an undefined variable, you will get a literal string of "undefined".</p>
+        <h3>Instructions</h3>
+        <p>Initialize the three variables a, b, and c with 5, 10, and "I am a" respectively so that they will not be undefined.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Initialize these three variables
+        var a=5;
+        var b=10;
+        var c="I am a";
+
+        // Do not change code below this line
+
+        a = a + 1;
+        b = b + 5;
+        c = c + " String!";
+        </pre>
+    </article>
+    <article>
+        <h2>Understanding Case Sensitivity in Variables</h2>
+        <p>In JavaScript all variables and function names are case sensitive. This means that capitalization matters.</p>
+        <p>MYVAR is not the same as MyVar nor myvar. It is possible to have multiple distinct variables with the same name but different casing. It is strongly recommended that for the sake of clarity, you do not use this language feature.</p>
+        <h3>Best Practice</h3>
+        <p>Write variable names in Javascript in camelCase. In camelCase, multi-word variable names have the first word in lowercase and the first letter of each subsequent word is capitalized.</p>
+        <h4>Examples:</h4>
+        <pre class="prettyprint html-js">
+var someVariable;
+var anotherVariableName;
+var thisVariableNameIsTooLong;
+            </pre>
+        <h3>Instructions</h3>
+        <p>Modify the existing declarations and assignments so their names use camelCase.
+            Do not create any new variables.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        // Declarations
+        var studlyCapVar;
+        var properCamelCase;
+        var titleCaseOver;
+
+        // Assignments
+        studlyCapVar = 10;
+        properCamelCase = "A String";
+        titleCaseOver = 9000;
+            </pre>
+    </article>
+    <article>
+        <h2>Add Two Numbers with JavaScript</h2>
+        <p>Number is a data type in JavaScript which represents numeric data.</p>
+        <p>Now let's try to add two numbers using JavaScript.</p>
+        <p>JavaScript uses the + symbol as addition operation when placed between two numbers.</p>
+        <h4>Example</h4>
+        <pre class="prettyprint html-js">
+myVar = 5 + 10; // assigned 15
+            </pre>
+        <h3>Instructions</h3>
+        <p>Change the 0 so that sum will equal 20.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        var sum = 10 + 10;
+            </pre>
+    </article>
+    <article>
+        <h2>Subtract One Number from Another with JavaScript</h2>
+        <p>We can also subtract one number from another.</p>
+        <p>JavaScript uses the - symbol for subtraction.</p>
+        <h4>Example</h4>
+        <pre class="prettyprint html-js">
+myVar = 12 - 6; // assigned 6
+            </pre>
+        <h3>Instructions</h3>
+        <p>Change the 0 so the difference is 12.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        var difference = 45-33;
+            </pre>
+    </article>
+    <article>
+        <h2>Multiply Two Numbers with JavaScript</h2>
+        <p>We can also multiply one number by another.</p>
+        <p>JavaScript uses the * symbol for multiplication of two numbers.</p>
+        <h4>Example</h4>
+        <pre class="prettyprint html-js">
+myVar = 13 * 13; // assigned 169
+            </pre>
+        <h3>Instructions</h3>
+        <p>Change the 0 so that product will equal 80</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        var product = 8 * 10;
+            </pre>
+    </article>
+    <article>
+        <h2>Divide One Number by Another with JavaScript</h2>
+        <p>We can also divide one number by another.</p>
+        <p>JavaScript uses the / symbol for division.</p>
+        <h4>Example</h4>
+        <pre class="prettyprint html-js">
+myVar = 16 / 2; // assigned 8
+            </pre>
+        <h3>Instructions</h3>
+        <p>Change the 0 so that the quotient is equal to 2.</p>
+        <h3>My working code:</h3>
+        <pre class="prettyprint html-js">
+        var quotient = 66 / 33;
+            </pre>
+    </article>
+</div>
+</body>
+</html>

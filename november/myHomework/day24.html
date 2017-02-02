@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel=stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1>Section 4 Lecture 40 - Framework Aside: Function Overloading</h1>
+<pre class="prettyprint html-js">
+    function greet(firstname, lastname, language) {
+    language = language || 'en';
+    if (language === 'en') {
+        console.log('Hello ' + firstname + ' ' + lastname);
+    }
+    if (language === 'es') {
+        console.log('Hola ' + firstname + ' ' + lastname);
+    }
+}
+function greetEnglish(firstname, lastname) {
+    greet(firstname, lastname, 'en');
+}
+function greetSpanish(firstname, lastname) {
+    greet(firstname, lastname, 'es');
+}
+greetEnglish('John', 'Doe');
+greetSpanish('John', 'Doe');
+</pre>
+<h1>Section 4 Lecture 41 - Conceptual Aside: Syntax Parsers</h1>
+<pre class="prettyprint html-js">
+    return;
+    //No Code to follow along
+</pre>
+<h1>Section 4 Lecture 42 - Dangerous Aside: Automatic Semicolon Insertion</h1>
+<pre class="prettyprint html-js">
+    function getPerson() {
+    return {
+        firstname:'Tony'
+    }
+}
+console.log(getPerson());
+</pre>
+<h1>Section 4 Lecture 43 - Framework Aside: Whitespace</h1>
+<pre class="prettyprint html-js">
+    var
+    // first name of the person
+    firstname,
+    // last name of the person
+    lastname,
+    // the language
+    // can be 'en' or 'es'
+    language;
+var person = {
+    // the first name
+    firstname: 'John',
+    // the last name
+    // (always required)
+    lastname: 'Doe'
+}
+console.log(person);
+</pre>
+<h1>Section 4 Lecture 44 - Immediately Invoked Functions Expression</h1>
+<pre class="prettyprint html-js">
+    // function statement
+function greet(name) {
+    console.log('Hello ' + name);
+}
+greet('John');
+// using a function expression
+var greetFunc = function(name) {
+    console.log('Hello ' + name);
+};
+greetFunc('John');
+// using an Immediately Invoked Function Expression (IIFE)
+var greeting = function(name) {
+    return 'Hello ' + name;
+}('John');
+console.log(greeting);
+// IIFE
+var firstname = 'John';
+(function(name) {
+    var greeting = 'Inside IIFE: Hello';
+    console.log(greeting + ' ' + name);
+}(firstname)); // IIFE
+</pre>
+<h1>Section 4 Lecture 45 - Framework Aside:IIFEs and Safe Code</h1>
+<pre class="prettyprint html-js">
+    // IIFE
+(function(global, name) {
+    var greeting = 'Hello';
+    global.greeting = 'Hello';
+    console.log(greeting + ' ' + name);
+}(window, 'John')); // IIFE
+console.log(greeting);
+
+    //greet.js
+    var greeting = 'Hola';
+
+
+
+</pre>
+
+</body>
+</html>

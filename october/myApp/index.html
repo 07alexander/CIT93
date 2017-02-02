@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../october/myApp/css/style.css">
+</head>
+<header style="display:none">
+    <h1></h1>
+    <div id="hContent"></div>
+</header>
+<body>
+
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDf3jyQc5JUmQh2gdnk05wFwhZ3C7IxsfA",
+        authDomain: "cit93-ddca2.firebaseapp.com",
+        databaseURL: "https://cit93-ddca2.firebaseio.com",
+        storageBucket: "",
+        messagingSenderId: "648651530247"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<div id='main'>
+    <nav>
+        <div>
+            <div id="showLogin">
+                <form id = "loginForm" onsubmit="return loginUser()">
+                    <input id = "username" type="text" placeholder="Username" required/>
+                    <input id = "password" type="password" placeholder="Password" required/><br>
+                    <input class="color-change" type="submit" value="Login"/>
+                    <button class="color-change" onclick="showSignUp()" >Sign Up</button>
+                </form>
+            </div>
+            <div id="createUser" class="not-visible">
+                <form id="createUserForm" onsubmit="return newUser()">
+                    <input id="createName" type="text" placeholder="Enter new User Name" required/><br>
+                    <input id="createPassword" type="password" placeholder="Enter new Password" required/><br>
+                    <input class="color-change" type="submit" value="Sign Up"/>
+                </form>
+            </div>
+        </div>
+        <div id ="nContent"></div>
+    </nav>
+    <article id="article">
+        <h1 id= "title" style="color: white;font-size: 100px">To-Do</h1>
+        <div id ="aContent"></div>
+        <div id="showBlog"></div>
+    </article>
+    <aside style="display: none">
+        <div id="asContent"></div>
+    </aside>
+</div>
+<footer style="display: none">
+    <div id="fContent"></div>
+</footer>
+<script src="js/app.js"></script>
+</body>
+</html>

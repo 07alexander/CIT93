@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel=stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <h1>FreeCodeCamp.com Homework for Week8 Day 15</h1>
+</header>
+<article>
+    <h2>Delete Properties from a JavaScript Object</h2>
+    <p>We can also delete properties from objects like this:</p>
+    <p></p>
+    <p></p>
+    <code>delete ourDog.bark;</code>
+    <h3>Instructions</h3>
+    <p>Delete the "tails" property from myDog. You may use either dot or bracket notation.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+// Example
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"],
+  "bark": "bow-wow"
+};
+
+delete ourDog.bark;
+
+// Setup
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["Free Code Camp Campers"],
+  "bark": "woof"
+};
+
+// Only change code below this line.
+delete myDog.tails;
+        </pre>
+</article>
+<article>
+    <h2>Using Objects for Lookups</h2>
+    <p>Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to "lookup" values rather than a switch statement or an if/else chain. This is most useful when you know that your input data is limited to a certain range.</p>
+    <p>Here is an example of a simple reverse alphabet lookup:</p>
+    <p></p>
+    <code>var alpha = {
+        1:"Z",
+        2:"Y",
+        3:"X",
+        4:"W",
+        ...
+        24:"C",
+        25:"B",
+        26:"A"
+        };
+        alpha[2]; // "Y"
+        alpha[24]; // "C"
+
+        var value = 2;
+        alpha[value]; // "Y"</code>
+    <h3>Instructions</h3>
+    <p>Convert the switch statement into a lookup table called lookup. Use it to lookup val and assign the associated string to the result variable.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+// Setup
+function phoneticLookup(val) {
+  var result = "";
+
+  // Only change code below this line
+  var lookup = {
+    "alpha":"Adams",
+    "bravo":"Boston",
+    "charlie":"Chicago",
+    "delta":"Denver",
+    "echo":"Easy",
+    "foxtrot":"Frank",
+  };
+  result = lookup[val];
+
+  // Only change code above this line
+  return result;
+}
+
+// Change this value to test
+phoneticLookup("charlie");
+        </pre>
+</article>
+<article>
+    <h2>Testing Objects for Properties</h2>
+    <p>Sometimes it is useful to check if the property of a given object exists or not. We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.</p>
+    <p>Example</p>
+    <p></p>
+    <code>var myObj = {
+        top: "hat",
+        bottom: "pants"
+        };
+        myObj.hasOwnProperty("top");    // true
+        myObj.hasOwnProperty("middle"); // false</code>
+    <h3>Instructions</h3>
+    <p>Modify the function checkObj to test myObj for checkProp. If the property is found, return that property's value. If not, return "Not Found".</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+// Setup
+var myObj = {
+  gift: "pony",
+  pet: "kitten",
+  bed: "sleigh"
+};
+
+function checkObj(checkProp) {
+  // Your Code Here
+  if( myObj.hasOwnProperty(checkProp)){ return myObj[checkProp];}
+  else {return "Not Found";}
+}
+
+// Test your code by modifying these values
+checkObj("gift");
+        </pre>
+</article>
+<article>
+    <h2>Manipulating Complex Objects</h2>
+    <p>Sometimes you may want to store data in a flexible Data Structure. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.</p>
+    <p>Here's an example of a complex data structure:</p>
+    <p></p>
+    <code>var ourMusic = [
+        {
+        "artist": "Daft Punk",
+        "title": "Homework",
+        "release_year": 1997,
+        "formats": [
+        "CD",
+        "Cassette",
+        "LP" ],
+        "gold": true
+        }
+        ];</code>
+    <p>This is an array which contains one object inside. The object has various pieces of metadata about an album. It also has a nested "formats" array. If you want to add more album records, you can do this by adding records to the top level array. Objects hold data in a property, which has a key-value format. In the example above, "artist": "Daft Punk" is a property that has a key of "artist" and a value of "Daft Punk".
+
+        JavaScript Object Notation or JSON is a related data interchange format used to store data.</p>
+    <code>{
+        "artist": "Daft Punk",
+        "title": "Homework",
+        "release_year": 1997,
+        "formats": [
+        "CD",
+        "Cassette",
+        "LP"
+        ],
+        "gold": true
+        }</code>
+    <p>Note
+        You will need to place a comma after every object in the array, unless it is the last object in the array.</p>
+    <h3>Instructions</h3>
+    <p>Add a new album to the myMusic array. Add artist and title strings, release_year number, and a formats array of strings.
+
+    </p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+
+var myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CS",
+      "8T",
+      "LP" ],
+    "gold": true
+  },
+  // Add record here
+  {
+    "artist": "Daft Punk",
+    "title": "Homework",
+    "release_year": 1997,
+    "formats":[
+      "CD",
+      "Cassette",
+      "LP"
+    ],
+  }
+];
+        </pre>
+</article>
+<article>
+    <h2>Accessing Nested Objects </h2>
+    <p>The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
+
+        Here is a nested object:</p>
+    <p></p>
+    <p></p>
+    <code>var ourStorage = {
+        "desk": {
+        "drawer": "stapler"
+        },
+        "cabinet": {
+        "top drawer": {
+        "folder1": "a file",
+        "folder2": "secrets"
+        },
+        "bottom drawer": "soda"
+        }
+        };
+        ourStorage.cabinet["top drawer"].folder2;  // "secrets"
+        ourStorage.desk.drawer; // "stapler"</code>
+
+    <p></p>
+    <h3>Instructions</h3>
+    <p>Access the myStorage object and assign the contents of the glove box property to the gloveBoxContents variable. Use bracket notation for properties with a space in their name.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+// Setup
+var myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+
+
+// Only change code below this line
+
+var gloveBoxContents = myStorage.car.inside["glove box"]; // Change this line
+
+
+        </pre>
+</article>
+<article>
+    <h2>Accessing Nested Arrays</h2>
+    <p>As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.
+
+        Here is an example of how to access a nested array:</p>
+    <p></p>
+    <p></p>
+    <code>var ourPets = [
+        {
+        animalType: "cat",
+        names: [
+        "Meowzer",
+        "Fluffy",
+        "Kit-Cat"
+        ]
+        },
+        {
+        animalType: "dog",
+        names: [
+        "Spot",
+        "Bowser",
+        "Frankie"
+        ]
+        }
+        ];
+        ourPets[0].names[1]; // "Fluffy"
+        ourPets[1].names[0]; // "Spot"</code>
+    <p></p>
+    <code></code>
+    <p></p>
+    <h3>Instructions</h3>
+    <p>Retrieve the second tree from the variable myPlants using object dot and array bracket notation.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+
+// Setup
+var myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+// Only change code below this line
+
+var secondTree =myPlants[1].list[1]; // Change this line
+        </pre>
+</article>
+<article>
+    <h2>Record Collection </h2>
+    <p>You are given a JSON object representing a part of your musical album collection. Each album has several properties and a unique id number as its key. Not all albums have complete information.</p>
+    <p>Write a function which takes an album's id (like 2548), a property prop (like "artist" or "tracks"), and a value (like "Addicted to Love") to modify the data in this collection.</p>
+    <p>If prop isn't "tracks" and value isn't empty (""), update or set the value for that record album's property.</p>
+    <code></code>
+    <p>Your function must always return the entire collection object.
+
+        There are several rules for handling incomplete data:
+
+        If prop is "tracks" but the album doesn't have a "tracks" property, create an empty array before adding the new value to the album's corresponding property.
+
+        If prop is "tracks" and value isn't empty (""), push the value onto the end of the album's existing tracks array.
+
+        If value is empty (""), delete the given prop property from the album.</p>
+    <code></code>
+    <p>Hints
+        Use bracket notation when accessing object properties with variables.
+
+        Push is an array method you can read about on Mozilla Developer Network.
+
+        You may refer back to Manipulating Complex Objects Introducing JavaScript Object Notation (JSON) for a refresher.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+// Setup
+var collection = {
+    "2548": {
+      "album": "Slippery When Wet",
+      "artist": "Bon Jovi",
+      "tracks": [
+        "Let It Rock",
+        "You Give Love a Bad Name"
+      ]
+    },
+    "2468": {
+      "album": "1999",
+      "artist": "Prince",
+      "tracks": [
+        "1999",
+        "Little Red Corvette"
+      ]
+    },
+    "1245": {
+      "artist": "Robert Palmer",
+      "tracks": [ ]
+    },
+    "5439": {
+      "album": "ABBA Gold"
+    }
+};
+// Keep a copy of the collection for tests
+var collectionCopy = JSON.parse(JSON.stringify(collection));
+
+// Only change code below this line
+function updateRecords(id, prop, value) {
+         if (prop !== "tracks" && value !== "") {
+          collection[id][prop] = value;
+      } else if (prop === "tracks" && collection[id].hasOwnProperty("tracks") !== true) {
+          collection[id][prop] = [];
+          collection[id][prop].push(value);
+      } else if (prop === "tracks" && value !== "") {
+          collection[id][prop].push(value);
+      } else if (value === "") {
+          delete collection[id][prop];
+      }
+        return collection;
+      }
+
+// Alter values below to test your code
+updateRecords(5439, "artist", "ABBA");
+
+        </pre>
+</article>
+<article>
+    <h2>Iterate with JavaScript For Loops </h2>
+    <p>You can run the same code multiple times by using a loop.
+
+        The most common type of JavaScript loop is called a "for loop" because it runs "for" a specific number of times.
+
+        For loops are declared with three optional expressions separated by semicolons:
+
+        for ([initialization]; [condition]; [final-expression])
+
+        The initialization statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.</p>
+    <p>The condition statement is evaluated at the beginning of every loop iteration and will continue as long as it evaluates to true. When condition is false at the start of the iteration, the loop will stop executing. This means if condition starts as false, your loop will never execute.
+
+        The final-expression is executed at the end of each loop iteration, prior to the next condition check and is usually used to increment or decrement your loop counter.</p>
+    <p>In the following example we initialize with i = 0 and iterate while our condition i < 5 is true. We'll increment i by 1 in each loop iteration with i++ as our final-expression.</p>
+    <code>var ourArray = [];
+        for (var i = 0; i < 5; i++) {
+        ourArray.push(i);
+        }</code>
+    <p>ourArray will now contain [0,1,2,3,4].</p>
+    <code></code>
+    <p></p>
+    <h3>Instructions</h3>
+    <p>Use a for loop to work to push the values 1 through 5 onto myArray.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+// Example
+var ourArray = [];
+
+for (var i = 0; i < 5; i++) {
+  ourArray.push(i);
+}
+
+// Setup
+var myArray = [];
+
+// Only change code below this line.
+
+for(var i=1;i<6;i++){
+  myArray.push(i);
+}
+        </pre>
+</article>
+<article>
+    <h2>Iterate Odd Numbers With a For Loop </h2>
+    <p>For loops don't have to iterate one at a time. By changing our final-expression, we can count by even numbers.</p>
+    <p>We'll start at i = 0 and loop while i < 10. We'll increment i by 2 each loop with i += 2.</p>
+    <p></p>
+    <code>var ourArray = [];
+        for (var i = 0; i < 10; i += 2) {
+        ourArray.push(i);
+        }</code>
+    <p>ourArray will now contain [0,2,4,6,8].
+
+        Let's change our initialization so we can count by odd numbers.</p>
+    <code></code>
+    <p></p>
+    <h3>Instructions</h3>
+    <p>Push the odd numbers from 1 through 9 to myArray using a for loop.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+// Example
+var ourArray = [];
+
+for (var i = 0; i < 10; i += 2) {
+  ourArray.push(i);
+}
+
+// Setup
+var myArray = [];
+
+for(var i =1; i<11; i+=2){
+  myArray.push(i);
+}
+// Only change code below this line.
+
+        </pre>
+</article>
+<article>
+    <h2>Count Backwards With a For Loop </h2>
+    <p>A for loop can also count backwards, so long as we can define the right conditions.
+
+        In order to count backwards by twos, we'll need to change our initialization, condition, and final-expression.
+
+        We'll start at i = 10 and loop while i > 0. We'll decrement i by 2 each loop with i -= 2.</p>
+    <p></p>
+    <p></p>
+    <code>var ourArray = [];
+        for (var i=10; i > 0; i-=2) {
+        ourArray.push(i);
+        }</code>
+    <p>ourArray will now contain [10,8,6,4,2].
+
+        Let's change our initialization and final-expression so we can count backward by twos by odd numbers.</p>
+    <code></code>
+    <p></p>
+    <h3>Instructions</h3>
+    <p>Push the odd numbers from 9 through 1 to myArray using a for loop.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+
+// Example
+var ourArray = [];
+
+for (var i = 10; i > 0; i -= 2) {
+  ourArray.push(i);
+}
+
+// Setup
+var myArray = [];
+for (var i = 9;i>0; i-=2){
+  myArray.push(i);
+}
+// Only change code below this line.
+
+        </pre>
+</article>
+<article>
+    <h2>Iterate Through an Array with a For Loop
+    </h2>
+    <p>A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a for loop. This code will output each element of the array arr to the console:</p>
+    <p></p>
+    <p></p>
+    <code>var arr = [10,9,8,7,6];
+        for (var i=0; i < arr.length; i++) {
+        console.log(arr[i]);
+        }</code>
+    <p>Remember that Arrays have zero-based numbering, which means the last index of the array is length - 1. Our condition for this loop is i < arr.length, which stops when i is at length - 1.</p>
+    <code></code>
+    <p></p>
+    <h3>Instructions</h3>
+    <p>Declare and initialize a variable total to 0. Use a for loop to add the value of each element of the myArr array to total.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+// Example
+var ourArr = [ 9, 10, 11, 12];
+var ourTotal = 0;
+
+for (var i = 0; i < ourArr.length; i++) {
+  ourTotal += ourArr[i];
+}
+
+// Setup
+var myArr = [ 2, 3, 4, 5, 6];
+
+// Only change code below this line
+var total = 0;
+for(var i =0;i< myArr.length;i++){
+  total += myArr[i];
+}
+
+        </pre>
+</article>
+<article>
+    <h2>Nesting For Loops</h2>
+    <p>If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. Here is an example:</p>
+    <p></p>
+    <p></p>
+    <code>var arr = [
+        [1,2], [3,4], [5,6]
+        ];
+        for (var i=0; i < arr.length; i++) {
+        for (var j=0; j < arr[i].length; j++) {
+        console.log(arr[i][j]);
+        }
+        }</code>
+    <p>This outputs each sub-element in arr one at a time. Note that for the inner loop, we are checking the .length of arr[i], since arr[i] is itself an array.</p>
+    <code></code>
+    <p></p>
+    <h3>Instructions</h3>
+    <p>Modify function multiplyAll so that it multiplies the product variable by each number in the sub-arrays of arr</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+function multiplyAll(arr) {
+  var product = 1;
+  // Only change code below this line
+  for(var i=0;i < arr.length;i++){
+    for(var j=0;j < arr[i].length;j++){
+      product*=arr[i][j];
+    }
+  }
+  // Only change code above this line
+  return product;
+}
+
+// Modify values below to test your code
+multiplyAll([[1,2],[3,4],[5,6,7]]);
+
+        </pre>
+</article>
+<article>
+    <h2>Iterate with JavaScript While Loops </h2>
+    <p>You can run the same code multiple times by using a loop.
+
+        Another type of JavaScript loop is called a "while loop", because it runs "while" a specified condition is true and stops once that condition is no longer true.</p>
+    <p></p>
+    <p></p>
+    <code>var ourArray = [];
+        var i = 0;
+        while(i < 5) {
+        ourArray.push(i);
+        i++;
+        }</code>
+    <p>Let's try getting a while loop to work by pushing values to an array.</p>
+    <code></code>
+    <p></p>
+    <h3>Instructions</h3>
+    <p>Push the numbers 0 through 4 to myArray using a while loop.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+// Setup
+var myArray = [];
+
+// Only change code below this line.
+var i=0;
+while (i<5){
+  myArray.push(i);
+  i++;
+}
+        </pre>
+</article>
+<article>
+    <h2>Profile Lookup</h2>
+    <p>We have an array of objects representing different people in our contacts lists.
+
+        A lookUpProfile function that takes firstName and a property (prop) as arguments has been pre-written for you.
+
+        The function should check if firstName is an actual contact's firstName and the given property (prop) is a property of that contact.</p>
+    <p>If both are true, then return the "value" of that property.
+
+        If firstName does not correspond to any contacts then return "No such contact"
+
+        If prop does not correspond to any valid properties then return "No such property"</p>
+    <p></p>
+    <code></code>
+    <p></p>
+    <code></code>
+    <p></p>
+    <p></p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+//Setup
+var contacts = [
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["Javascript", "Gaming", "Foxes"]
+    }
+];
+
+
+function lookUpProfile(firstName, prop){
+// Only change code below this line
+      for (var i = 0; i < contacts.length; i++) {
+        if (firstName === contacts[i].firstName && contacts[i].hasOwnProperty(prop)) {
+          return contacts[i][prop];
+      } else if (contacts[i].hasOwnProperty(prop) !== true) {
+        return "No such property";
+        }
+      }
+return "No such contact";
+// Only change code above this line
+}
+
+// Change these values to test your function
+lookUpProfile("Akira", "likes");
+
+        </pre>
+</article>
+<article>
+    <h2>Generate Random Fractions with JavaScript</h2>
+    <p>Random numbers are useful for creating random behavior.
+
+        JavaScript has a Math.random() function that generates a random decimal number between 0 (inclusive) and not quite up to 1 (exclusive). Thus Math.random() can return a 0 but never quite return a 1</p>
+    <p>Note
+        Like Storing Values with the Equal Operator, all function calls will be resolved before the return executes, so we can return the value of the Math.random() function.</p>
+    <p></p>
+    <code></code>
+    <p></p>
+    <code></code>
+    <p></p>
+    <h3>Instructions</h3>
+    <p>Change randomFraction to return a random number instead of returning 0.</p>
+    <h3>My working code:</h3>
+    <pre class="prettyprint html-js">
+function randomFraction() {
+
+  // Only change code below this line.
+
+  return Math.random();
+
+  // Only change code above this line.
+}
+
+        </pre>
+</article>
+
+</body>
+</html>

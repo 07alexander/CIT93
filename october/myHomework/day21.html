@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel=stylesheet" href="../../august/css/style.css">
+</head>
+<body>
+<h1>Homework Day 21</h1>
+<p>
+    Most of the storage that I need for my app, is just the login credentials. Also I would need to store the users tasks and be able to delete them. Maybe implement a temporary history storage that deletes after a certain amount of time. But I will try to focus on the small stuff first, before I try to jump on trying to store everything. I'm going to focus more on local storage because I don't know how I can use session storage for my app as of right now. 
+</p>
+<h2>Local storage for app</h2>
+<p>
+    <a href="http://www.w3schools.com/html/html5_webstorage.asp">Local Storage Resource</a>
+    I think I'm going to use some of the local storage methods provided for html, from the link. <br>
+
+</p>
+<h2>Examples</h2>
+<pre class="prettyprint">
+// Store
+localStorage.setItem("lastname", "Smith");
+// Retrieve
+document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+
+    // Store
+localStorage.lastname = "Smith";
+// Retrieve
+document.getElementById("result").innerHTML = localStorage.lastname;
+
+    localStorage.removeItem("lastname");
+
+
+    if (localStorage.clickcount) {
+    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+} else {
+    localStorage.clickcount = 1;
+}
+document.getElementById("result").innerHTML = "You have clicked the button " +
+localStorage.clickcount + " time(s).";
+</pre>
+<h2>Session Storage</h2>
+<p>
+    I think I might also try using session Storage, where the data is only stored for only one session, the data seleted when the user closes the specific browser tab
+</p>
+<pre class="prettyprint">
+    if (sessionStorage.clickcount) {
+    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+} else {
+    sessionStorage.clickcount = 1;
+}
+document.getElementById("result").innerHTML = "You have clicked the button " +
+sessionStorage.clickcount + " time(s) in this session.";
+</pre>
+</body>
+</html>

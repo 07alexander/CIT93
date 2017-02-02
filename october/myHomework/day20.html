@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel=stylesheet" href="../../august/css/style.css">
+</head>
+<body>
+<h1>Feature I</h1>
+<p>Add functionailty to prevent mulitple clicks on the nav bar</p>
+<pre class="prettyprint">
+    //Either in the method or in showNav(item) I have to insert a condition to prevent multiple clicks of the method
+newDiv.onclick = item.method;
+    method: function(){ //Need to make button only clickable once
+            var newDiv = document.createElement("div");
+            var button = document.createElement("div");
+            button.className = "color-change";
+            var newContent = document.createTextNode(lists[0].title);
+            var buttonAdd = document.createTextNode("Add new list");
+            newDiv.appendChild(newContent);
+            button.appendChild(buttonAdd);
+            document.getElementById('aContent').appendChild(newDiv);
+            document.getElementById('aContent').appendChild(button);
+            button.onclick= lists[0].button;
+        },
+</pre>
+
+<h1>Feature II</h1>
+<p>Create a simple sign out button</p>
+<pre class="prettyprint">
+   //I think I will add an object to my lists
+    var lists = [ //To implement button to show respective content for article
+    {
+        title: "Inbox",
+        method: function(){ //Need to make button only clickable once
+            var newDiv = document.createElement("div");
+            var button = document.createElement("div");
+            button.className = "color-change";
+            var newContent = document.createTextNode(lists[0].title);
+            var buttonAdd = document.createTextNode("Add new list");
+            newDiv.appendChild(newContent);
+            button.appendChild(buttonAdd);
+            document.getElementById('aContent').appendChild(newDiv);
+            document.getElementById('aContent').appendChild(button);
+            button.onclick= lists[0].button;
+        },
+        button: function(){
+            var newDiv = document.createElement("div");
+            var newContent = document.createTextNode(lists[0].tasks[0]);
+            var checkBox = document.createElement("INPUT");
+            checkBox.setAttribute("type", "checkbox");
+            newDiv.appendChild(newContent);
+            document.getElementById('aContent').appendChild(newDiv);
+            document.getElementById('aContent').appendChild(checkBox);
+
+        },
+        tasks: ["new"]
+    },
+    {
+        title: "Today",
+        method: function(){alert("Today");}
+    },
+    {
+        title: "Week",
+        method: function(){alert("Week");}
+    },
+    {
+        title: "Create New List",
+        method: function(){alert("Create New List");}
+    },
+        title: "Sign Out",
+        //method: function(){method to revert back to the login screen}
+];
+</pre>
+
+<h1>Feature III</h1>
+<p>Add deletion to the task checkboxes</p>
+<pre class="prettyprint">
+
+   //Checking a box will automatically delete the task
+    function check() {
+    document.getElementById("myCheck").checked = true;
+}
+    if(check()= true){
+    delete myArray[x];
+    // or
+    myArray.splice(x,y);
+</pre>
+</body>
+</html>

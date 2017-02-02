@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel=stylesheet" href="../../august/css/style.css">
+</head>
+<body>
+
+<h1>Homework Week 7 Day 14 : Udemy - JavaScript the Weird Parts</h1>
+
+<h2>Section 3 Lecture 25 - Comparison Operators</h2>
+<ul>
+    <li>Javascript engine will convert boolean into numbers if it has to (coercing a data type when interpreting)</li>
+    <li>When trying to coerce "undefined" Javascript will spit out NaN(not a number)</li>
+    <li>Use triple equals when making equality comparisons, unless you explicitly want to coerce the two value </li>
+    <li>As default make sure to always use triple equals for equality comparisons</li>
+</ul>
+<h2>Coding Along:</h2>
+<pre class="prettyprint html-js">
+    console.log(1<2<3); //true
+    console.log(3<2<1); //true
+    console.log(false < 1); //Converts boolean into a number
+    var a = 0;
+    var b = false;
+    if(a == b) { // They are equal, if use "===" then nope not equal
+        console.log("They are equal!");
+    }else{
+        console.log("Nope, not equal.");
+    }
+</pre>
+<h2>Section 3 Lecture 26 - Equality Comparisons Table</h2>
+<ul>
+    <li>There are four equality algorithms in ES2015</li>
+    <li>Abstract Equality Comparison (==)</li>
+    <li>Strict Equality Comparison (===): used by Array.prototype.indexOf, Array.prototype.lastIndexOf, and case-matching</li>
+    <li>SameValueZero: used by %TypedArray% and ArrayBuffer constructors, as well as Map and Set operations, and up-coming String.prototype.includes in ES2016</li>
+    <li>SameValue: used in all other places</li>
+</ul>
+<table class="standard-table">
+    <caption>Sameness Comparisons</caption>
+    <thead>
+    <tr>
+        <th style="text-align: center;" scope="col">x</th>
+        <th style="text-align: center;" scope="col">y</th>
+        <th style="width: 10em; text-align: center;" scope="col"><code>==</code></th>
+        <th style="width: 10em; text-align: center;" scope="col"><code>===</code></th>
+        <th style="width: 10em; text-align: center;" scope="col"><code>Object.is</code></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><code>undefined</code></td>
+        <td><code>undefined</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+    </tr>
+    <tr>
+        <td><code>null</code></td>
+        <td><code>null</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+    </tr>
+    <tr>
+        <td><code>true</code></td>
+        <td><code>true</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+    </tr>
+    <tr>
+        <td><code>false</code></td>
+        <td><code>false</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+    </tr>
+    <tr>
+        <td><code>"foo"</code></td>
+        <td><code>"foo"</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+    </tr>
+    <tr>
+        <td><code>{ foo: "bar" }</code></td>
+        <td><code>x</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+    </tr>
+    <tr>
+        <td><code>0</code></td>
+        <td><code>0</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+    </tr>
+    <tr>
+        <td><code>+0</code></td>
+        <td><code>-0</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+    </tr>
+    <tr>
+        <td><code>0</code></td>
+        <td><code>false</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+    </tr>
+    <tr>
+        <td><code>""</code></td>
+        <td><code>false</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+    </tr>
+    <tr>
+        <td><code>""</code></td>
+        <td><code>0</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+    </tr>
+    <tr>
+        <td><code>"0"</code></td>
+        <td><code>0</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+    </tr>
+    <tr>
+        <td><code>"17"</code></td>
+        <td><code>17</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+    </tr>
+    <tr>
+        <td><code>[1,2]</code></td>
+        <td><code>"1,2"</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+    </tr>
+    <tr>
+        <td><code>new String("foo")</code></td>
+        <td><code>"foo"</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+    </tr>
+    <tr>
+        <td><code>null</code></td>
+        <td><code>undefined</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+    </tr>
+    <tr>
+        <td><code>null</code></td>
+        <td><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+    </tr>
+    <tr>
+        <td><code>undefined</code></td>
+        <td><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+    </tr>
+    <tr>
+        <td><code>{ foo: "bar" }</code></td>
+        <td><code>{ foo: "bar" }</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+    </tr>
+    <tr>
+        <td><code>new String("foo")</code></td>
+        <td><code>new String("foo")</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+    </tr>
+    <tr>
+        <td><code>0</code></td>
+        <td><code>null</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+    </tr>
+    <tr>
+        <td><code>0</code></td>
+        <td><code>NaN</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+    </tr>
+    <tr>
+        <td><code>"foo"</code></td>
+        <td><code>NaN</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+    </tr>
+    <tr>
+        <td><code>NaN</code></td>
+        <td><code>NaN</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(255, 144, 144); text-align: center;"><code>false</code></td>
+        <td style="background-color: rgb(144, 255, 144); text-align: center;"><code>true</code></td>
+    </tr>
+    </tbody>
+</table>
+<br> Table from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
+<h2>Section 3 Lecture 27 - Existence and Booleans</h2>
+<ul>
+    <li>When trying to convert undefined to a boolean, undefined becomes false when it's converted in the JavaScript engine</li>
+    <li>Whatever you put inside the parentheses of an if statement, it will attempt to convert or coerce to a boolean</li>
+    <li>We can use coercion to our own advantage and check to see if a variable has a value</li>
+    <li>This pattern of coercion, of using coercion in this case, to check for existence is used in a lot of frameworks and libraries</li>
+</ul>
+<h3>Coding Along:</h3>
+<pre class = "prettyprint html-js">
+    var a;
+    //goes to internet and looks for a value
+    a="hi"; //Something is there
+    for(a){
+        console.log('Something is there.');
+    }
+</pre>
+<h2>Section 3 Lecture 28 - Default Values</h2>
+<ul>
+    <li>Invocation is initially set when the memory space is set up to undefined</li>
+    <li>Javascript simply ignores function calls without the expected parameters and simply says it's okay</li>
+    <li>Operators are functions that return values, that's why name is equal to name, the value that currently has a default value or input value </li>
+    <li>You can set a default value with a one line OR expression</li>
+</ul>
+<pre class = "prettyprint html-js">
+    function greet(name) {
+    name = name || 'Your name here';
+    console.log('Hello ' + name);
+}
+
+greet('Tony'); //Hello Tony
+greet(); //Hello Your name here
+></pre>
+<h2>Section 3 Lecture 29 - Framework Aside: Default Values</h2>
+<ul>
+    <li>For our purposes, a framework and a library are the same thing; a grouping of javascript code that performs a task and and is intended to be reusable</li>
+    <li>Script tags do not create new execution context, they are simply stacked onto each other </li>
+    <li>You to make sure your libraries don't collide when you're stacking them or else you might get undesirable results</li>
+    <li>So when you look inside the source code you might see code that checks for the global namespace or object so it doesn't collide or override it </li>
+</ul>
+<pre class="prettyprint html-js">
+    window.libraryName = window.libraryName || "Lib2"; // Checking for name collision in libraries
+</pre>
+
+</body>
+</html>

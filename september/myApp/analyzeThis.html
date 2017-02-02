@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: red;
+            border: 1px solid yellow;
+        }
+    </style>
+</head>
+<body>
+<button id="myBtn">The Click</button>
+<script>
+    var timeComplete = document.createTextNode("Boom! After 5 seconds"); //global variable; creates a textnode for the document
+
+    function waitForIt() { //this function is called and has to wait 5 seconds, it will then resolve the appendChild and print "Finished Timeout"
+        setTimeout(function () {
+            document.body.appendChild(timeComplete); //this will append timeComplete to the document body
+            console.log("Finished Timeout");
+        }, 5000);
+    }
+    /*This is the mouseclick function, where it listens for a mouse click and adds to a
+    counter, it will resolve always after the "Finished Execution", If I were to move it into
+     the setTimeout function, it would have to wait for the timeout complete before it's able
+     to resolve the event queue
+     */
+    var countClick = 0; //global variable
+    document.getElementById("myBtn").addEventListener("click", function(){ //this will listen to myBtn and call the function whenever there is a mouse click on the button
+        countClick++; //adding 1 to countClick
+        console.log("Clicky: ", countClick ); //prints string and countClick
+    });
+
+    //The same applies for this function as is does with the mouse click function
+    var mouseCount = 0; //global variable
+    function mouseMove(){
+        mouseCount++ //adding 1 to mouseMove
+        console.log("Mouse Moving!", mouseCount); //prints string and mouseCount
+    }
+    document.body.addEventListener("mouseover", mouseMove);//this will listen to myBtn and will call mouseMove whenever the mouse goes over the myBtn
+
+    waitForIt(); //called first, but will resolve 2nd
+    console.log("Finished Execution!");//called 2nd, but  will resolve first
+</script>
+
+</body>
+</html>
